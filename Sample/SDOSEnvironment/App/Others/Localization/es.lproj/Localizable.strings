@@ -1,0 +1,7 @@
+// Example SDOSKZBootstrap
+
+"Example.btnTitle" = "Ver ejemplo";
+"Example.version" = "Versión %@";
+
+"Example.executionStringTitle" = "La app se está ejecutando en el entorno:";
+"Example.explanation" = "A continuación se muestran los distintos entornos sorportados por la app y los pares {clave : valor}. Observar cómo varían los valores para cada entorno.";

@@ -1,0 +1,14 @@
+source 'https://svrgitpub.sdos.es/iOS/cocoapods-specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+use_modular_headers!
+inhibit_all_warnings!
+
+def shared_pods
+	pod 'SDOSEnvironment', :path => '../../', :inhibit_warnings => false
+end
+
+target :SDOSEnvironmentExample do
+	shared_pods
+end

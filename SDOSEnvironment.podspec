@@ -1,0 +1,22 @@
+@version = "0.9.0"
+Pod::Spec.new do |spec|
+  spec.platform     = :ios, '9.0'
+  spec.name         = 'SDOSEnvironment'
+  spec.authors      = 'SDOS'
+  spec.version      = @version
+  spec.license      = { :type => 'SDOS License' }
+  spec.homepage     = 'https://svrgitpub.sdos.es/iOS/SDOSEnvironment'
+  spec.summary      = 'Librería para el manejo de variables de entorno'
+  spec.source       = { :git => "https://svrgitpub.sdos.es/iOS/SDOSEnvironment.git", :tag => "v#{spec.version}" }
+  spec.framework    = ['Foundation']
+  spec.requires_arc = true
+  spec.swift_version = '5.0'
+
+  spec.subspec 'SDOSEnvironment' do |s2|
+    s2.preserve_paths = 'src/Classes/*'
+    s2.source_files = ['src/Classes/*{*.m,*.h,*.swift}', 'src/Classes/**/*{*.m,*.h,*.swift}']
+  end
+  
+  spec.dependency 'RNCryptor'
+
+end
