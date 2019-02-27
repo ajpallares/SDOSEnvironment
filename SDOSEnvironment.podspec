@@ -12,9 +12,10 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.swift_version = '5.0'
 
-  spec.subspec 'SDOSEnvironment' do |s2|
-    s2.preserve_paths = 'src/Classes/*'
-    s2.source_files = ['src/Classes/*{*.m,*.h,*.swift}', 'src/Classes/**/*{*.m,*.h,*.swift}']
+  spec.preserve_paths = "src/Scripts/*"
+  spec.subspec 'SDOSEnvironment' do |s1|
+    s1.preserve_paths = 'src/Classes/*'
+    s1.source_files = ['src/Classes/*{*.m,*.h,*.swift}', 'src/Classes/**/*{*.m,*.h,*.swift}']
   end
   
   spec.dependency 'RNCryptor'

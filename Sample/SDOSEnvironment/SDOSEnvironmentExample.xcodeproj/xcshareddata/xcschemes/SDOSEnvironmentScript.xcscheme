@@ -67,6 +67,10 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
+            argument = "-of ${PROJECT_DIR}/App/Configuration/Properties/SDOSEnvironment.swift"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "-b es.sdos.sdosenvironment.dev"
             isEnabled = "YES">
          </CommandLineArgument>
