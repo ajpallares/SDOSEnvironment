@@ -11,13 +11,13 @@ import SDOSEnvironment
 struct Environment {
 	private init() { }
 	/// Variable reference: showSelectedEnvironmentsOnLoad
-	let showSelectedEnvironmentsOnLoad = SDOSEnvironment.getValue(key: showSelectedEnvironmentsOnLoad
-	/// Variable reference: EnvironmentDescription
-	let environmentDescription = SDOSEnvironment.getValue(key: EnvironmentDescription
-	/// Variable reference: wsBaseUrl
-	let wsBaseUrl = SDOSEnvironment.getValue(key: wsBaseUrl
-	/// Variable reference: googleAnalyticsKey
-	let googleAnalyticsKey = SDOSEnvironment.getValue(key: googleAnalyticsKey
+	static var showSelectedEnvironmentsOnLoad: String { return  SDOSEnvironment.getValue(key: "showSelectedEnvironmentsOnLoad") }
 	/// Variable reference: octopushMode
-	let octopushMode = SDOSEnvironment.getValue(key: octopushMode
+	static var octopushMode: String { return  SDOSEnvironment.getValue(key: "octopushMode") }
+	/// Variable reference: googleAnalyticsKey
+	static var googleAnalyticsKey: String { return  SDOSEnvironment.getValue(key: "googleAnalyticsKey") }
+	/// Variable reference: EnvironmentDescription
+	static var environmentDescription: String { return  SDOSEnvironment.getValue(key: "EnvironmentDescription") }
+	/// Variable reference: wsBaseUrl
+	static var wsBaseUrl: String { return  SDOSEnvironment.getValue(key: "wsBaseUrl") }
 }

@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-#define DOCUMENTATION_URL @"https://kc.sdos.es/x/CQBm"
+#define DOCUMENTATION_URL @"https://kc.sdos.es/x/PwLLAQ"

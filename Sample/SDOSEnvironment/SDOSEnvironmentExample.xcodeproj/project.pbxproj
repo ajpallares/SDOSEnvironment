@@ -32,6 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2907D2CE222FD23000CD7E1D /* ConstantsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */; };
 		293F259722259A4D001DC22B /* environments.bin in Resources */ = {isa = PBXBuildFile; fileRef = 293F259622259A4D001DC22B /* environments.bin */; };
 		294F789C2226942700E2A24F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F789B2226942700E2A24F /* main.swift */; };
 		294F78A82226973E00E2A24F /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78A42226973E00E2A24F /* RNCryptor.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		17EFE1856AE679994C7C312D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		264674AD2E9336432AACE6AC /* Pods-SDOSEnvironmentExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSEnvironmentExample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSEnvironmentExample/Pods-SDOSEnvironmentExample.production.xcconfig"; sourceTree = "<group>"; };
+		2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSwift.swift; sourceTree = "<group>"; };
 		293F2594222599C4001DC22B /* environments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = environments.plist; sourceTree = "<group>"; };
 		293F259622259A4D001DC22B /* environments.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = environments.bin; sourceTree = "<group>"; };
 		294F78992226942700E2A24F /* SDOSEnvironmentScript */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDOSEnvironmentScript; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,6 +423,7 @@
 				298FD62F1C0701E500BA707E /* ConstantsColor.h */,
 				298FD6301C0701E500BA707E /* ConstantsFonts.h */,
 				298FD6311C0701E500BA707E /* ConstantsWS.h */,
+				2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -636,7 +639,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PROJECT_DIR/bin/T21CryptorCommandLine\" -p lz5zkvz5zkvzlu}pyvutlu{5kl} -i \"$PROJECT_DIR/App/Configuration/Properties/environments.plist\" -o \"$PROJECT_DIR/App/Configuration/Properties/environments.bin\"\n";
+			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironmentScript\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${PROJECT_DIR}/App/Configuration/Properties/environments.bin\" -of \"${PROJECT_DIR}/App/Configuration/Properties/SDOSEnvironment.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/environments.plist\"\n";
 		};
 		29AFB2041C04BFEE004AB1B6 /* Mogenerator */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -664,7 +667,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/SDOS/src/Scripts/SDOS.sh\"";
+			shellScript = "\"${SRCROOT}/Pods/SDOS/src/Scripts/SDOS.sh\"\n";
 		};
 		29AFB21D1C04C7CB004AB1B6 /* Warnings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -720,6 +723,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */,
+				2907D2CE222FD23000CD7E1D /* ConstantsSwift.swift in Sources */,
 				5CB7FE831DC9D6EA0053E1A8 /* KZBootstrapEnviromentsManager.m in Sources */,
 				294F78B92226CEDA00E2A24F /* SDOSEnvironment.swift in Sources */,
 				B1E8768F20BD9095006B4BDD /* AppDelegate.swift in Sources */,

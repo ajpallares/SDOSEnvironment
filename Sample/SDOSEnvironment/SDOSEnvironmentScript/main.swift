@@ -196,7 +196,7 @@ class ScriptAction {
             
             for item in keys {
                 result.append(contentsOf: "\t/// Variable reference: \(item)\n")
-                result.append(contentsOf: "\tlet \(item.lowerCaseFirstLetter()) = SDOSEnvironment.getValue(key: \(item)\n")
+                result.append(contentsOf: "\tstatic var \(item.lowerCaseFirstLetter()): String { return  SDOSEnvironment.getValue(key: \"\(item)\") }\n")
             }
         }
         result.append(contentsOf: "}")

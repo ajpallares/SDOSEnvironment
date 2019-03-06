@@ -9,6 +9,7 @@
 //  Permission granted to do anything, commercial/non-commercial with this file apart from removing the line/URL above
 
 #import "KZBootstrapEnviromentsManager.h"
+#import "SDOSEnvironmentExample-Swift.h"
 @import SDOSEnvironment;
 
 
@@ -44,11 +45,11 @@
     [dict removeObjectForKey:KZBOOTSTRAP_ENVIRONMENTS_KEY];
      */
     
-    return @{@"wsBaseUrl" : [SDOSEnvironment getValueWithKey:@"wsBaseUrl"],
-             @"octopushMode" : [SDOSEnvironment getValueWithKey:@"octopushMode"],
-             @"googleAnalyticsKey" : [SDOSEnvironment getValueWithKey:@"googleAnalyticsKey"],
-             @"showSelectedEnvironmentsOnLoad" : [SDOSEnvironment getValueWithKey:@"showSelectedEnvironmentsOnLoad"],
-             @"EnvironmentDescription" : [SDOSEnvironment getValueWithKey:@"EnvironmentDescription"]};
+    return @{@"wsBaseUrl" : [ConstantsSwift getWSBaseUrl],
+             @"octopushMode" : [ConstantsSwift getOctopushMode],
+             @"googleAnalyticsKey" : [ConstantsSwift getGoogleAnalyticsKey],
+             @"showSelectedEnvironmentsOnLoad" : [ConstantsSwift getShowSelectedEnvironmentsOnLoad],
+             @"EnvironmentDescription" : [ConstantsSwift getEnvironmentDescription]};
 }
 
 + (NSString *)executionEnvironment {

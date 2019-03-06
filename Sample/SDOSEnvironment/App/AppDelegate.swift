@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        let storyboard = UIStoryboard.init(name: ExampleKZBootstrap, bundle: nil)
+        let storyboard = UIStoryboard.init(name: "ExampleKZBootstrap", bundle: nil)
         let viewcontroller = storyboard.instantiateInitialViewController()
         
         self.window?.rootViewController = viewcontroller
