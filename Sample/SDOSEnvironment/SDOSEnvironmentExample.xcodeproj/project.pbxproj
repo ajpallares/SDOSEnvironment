@@ -37,7 +37,6 @@
 		294F789C2226942700E2A24F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F789B2226942700E2A24F /* main.swift */; };
 		294F78A82226973E00E2A24F /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78A42226973E00E2A24F /* RNCryptor.swift */; };
 		294F78B322269EFD00E2A24F /* ConsoleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78B222269EFD00E2A24F /* ConsoleParameter.swift */; };
-		294F78B92226CEDA00E2A24F /* SDOSEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78B82226CEDA00E2A24F /* SDOSEnvironment.swift */; };
 		298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
 		298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
 		298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BD1C0701E500BA707E /* App.debug.xcconfig */; };
@@ -47,6 +46,7 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		299DEFB22231015B00BDB9B0 /* SDOSEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299DEFB12231015B00BDB9B0 /* SDOSEnvironment.swift */; };
 		5CB7FE7B1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7FE7A1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m */; };
 		5CB7FE7D1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB7FE7C1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard */; };
 		5CB7FE801DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7FE7F1DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m */; };
@@ -80,7 +80,6 @@
 		294F78A72226973E00E2A24F /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
 		294F78A9222698A400E2A24F /* SDOSEnvironmentScript-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSEnvironmentScript-Bridging-Header.h"; sourceTree = "<group>"; };
 		294F78B222269EFD00E2A24F /* ConsoleParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleParameter.swift; sourceTree = "<group>"; };
-		294F78B82226CEDA00E2A24F /* SDOSEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDOSEnvironment.swift; sourceTree = "<group>"; };
 		2970AD751BFA153F007CFBD9 /* SDOSEnvironmentExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSEnvironmentExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FD5B71C0701E500BA707E /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		298FD5B81C0701E500BA707E /* SDOSEnvironmentExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDOSEnvironmentExample-Prefix.pch"; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
+		299DEFB12231015B00BDB9B0 /* SDOSEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDOSEnvironment.swift; sourceTree = "<group>"; };
 		5CB7FE791DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentationKZBootstrapViewController.h; sourceTree = "<group>"; };
 		5CB7FE7A1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationKZBootstrapViewController.m; sourceTree = "<group>"; };
 		5CB7FE7C1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleKZBootstrap.storyboard; sourceTree = "<group>"; };
@@ -278,7 +278,6 @@
 		298FD5C11C0701E500BA707E /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				294F78B82226CEDA00E2A24F /* SDOSEnvironment.swift */,
 				293F259622259A4D001DC22B /* environments.bin */,
 				293F2594222599C4001DC22B /* environments.plist */,
 			);
@@ -406,6 +405,7 @@
 		298FD6271C0701E500BA707E /* AutoGenerate */ = {
 			isa = PBXGroup;
 			children = (
+				299DEFB12231015B00BDB9B0 /* SDOSEnvironment.swift */,
 				298FD62A1C0701E500BA707E /* Leeme.txt */,
 				298FD6751C0706D400BA707E /* ImagesConstants.h */,
 				298FD6291C0701E500BA707E /* KZBootstrapConstants.h */,
@@ -639,7 +639,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironmentScript\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${PROJECT_DIR}/App/Configuration/Properties/environments.bin\" -of \"${PROJECT_DIR}/App/Configuration/Properties/SDOSEnvironment.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/environments.plist\"\n";
+			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironmentScript\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${PROJECT_DIR}/App/Configuration/Properties/environments.bin\" -of \"${PROJECT_DIR}/App/Others/Autogenerate/SDOSEnvironment.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/environments.plist\"\n";
 		};
 		29AFB2041C04BFEE004AB1B6 /* Mogenerator */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -725,12 +725,12 @@
 				298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */,
 				2907D2CE222FD23000CD7E1D /* ConstantsSwift.swift in Sources */,
 				5CB7FE831DC9D6EA0053E1A8 /* KZBootstrapEnviromentsManager.m in Sources */,
-				294F78B92226CEDA00E2A24F /* SDOSEnvironment.swift in Sources */,
 				B1E8768F20BD9095006B4BDD /* AppDelegate.swift in Sources */,
 				B1E8769320BDA59B006B4BDD /* Constants.m in Sources */,
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
 				5CB7FE7B1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m in Sources */,
+				299DEFB22231015B00BDB9B0 /* SDOSEnvironment.swift in Sources */,
 				5CB7FE801DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

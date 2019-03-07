@@ -189,14 +189,18 @@ class ScriptAction {
     func generateImplementation(keys: [String]?) -> String {
         var result = ""
         if let keys = keys {
+            var fileRelativePath = input!
+            fileRelativePath = fileRelativePath.replacingOccurrences(of: self.pwd, with: "")
+            
             result.append(contentsOf: "")
             result.append(contentsOf: "/// This Environment is generated and contains static references to \(keys.count) variables\n")
+            result.append(contentsOf: "/// Reference file: \(fileRelativePath)\n")
             result.append(contentsOf: "struct Environment {\n")
             result.append(contentsOf: "\tprivate init() { }\n")
             
             for item in keys {
                 result.append(contentsOf: "\t/// Variable reference: \(item)\n")
-                result.append(contentsOf: "\tstatic var \(item.lowerCaseFirstLetter()): String { return  SDOSEnvironment.getValue(key: \"\(item)\") }\n")
+                result.append(contentsOf: "\tstatic var \(item.lowerCaseFirstLetter()): String { return SDOSEnvironment.getValue(key: \"\(item)\") }\n")
             }
         }
         result.append(contentsOf: "}")
