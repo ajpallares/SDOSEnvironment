@@ -1,0 +1,26 @@
+PODS:
+  - RNCryptor (5.0.3)
+  - SDOSEnvironment (0.9.0):
+    - RNCryptor
+    - SDOSEnvironment/SDOSEnvironment (= 0.9.0)
+  - SDOSEnvironment/SDOSEnvironment (0.9.0):
+    - RNCryptor
+
+DEPENDENCIES:
+  - SDOSEnvironment (from `../../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RNCryptor
+
+EXTERNAL SOURCES:
+  SDOSEnvironment:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
+  SDOSEnvironment: aa994faf549526d96439b9d41cca8ed057084a52
+
+PODFILE CHECKSUM: 1a4a80899ec8cda7a1388898a905a6b4e41de723
+
+COCOAPODS: 1.5.3
