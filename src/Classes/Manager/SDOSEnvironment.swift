@@ -33,9 +33,9 @@ public let defaultEnvironmentKey = "Production"
     
     private override init() { }
     
-    @objc public static func configure(key: String? = nil, environmentKey: String? = defaultEnvironmentKey, debug: Bool = false) {
+    @objc public static func configure(file: String = "environments.bin", password: String? = nil, environmentKey: String? = defaultEnvironmentKey, debug: Bool = false) {
         sharedInstance.isDebug(debug: debug)
-        sharedInstance.configure(key: key, environmentKey: environmentKey)
+        sharedInstance.configure(file: file, password: password, environmentKey: environmentKey)
     }
     
     @objc public static func changeEnvironmentKey(_ environmentKey: String) {
@@ -50,15 +50,15 @@ public let defaultEnvironmentKey = "Production"
         sharedInstance.isDebug(debug: debug)
     }
     
-    private func configure(key: String?, environmentKey: String?) {
+    private func configure(file: String, password pwd: String?, environmentKey: String?) {
         var password: String
-        if let key = key {
+        if let key = pwd {
             password = key
         } else {
             password = generateDefaultPassword()
         }
         //decrypt the saved environments.bin to get environments.json contents
-        let environmentsFilePath = Bundle.main.path(forResource: "environments", ofType: "bin")
+        let environmentsFilePath = Bundle.main.path(forResource: file, ofType: "")
         if let path = environmentsFilePath {
             do {
                 let url = URL(fileURLWithPath: path)
@@ -80,7 +80,7 @@ public let defaultEnvironmentKey = "Production"
                 fatalError("Fallo durante la inicialización. Comprueba que la clave de desencriptación es correcta")
             }
         } else {
-            fatalError("No existe el fichero environments.bin")
+            fatalError("No existe el fichero \(file)")
         }
     }
     
