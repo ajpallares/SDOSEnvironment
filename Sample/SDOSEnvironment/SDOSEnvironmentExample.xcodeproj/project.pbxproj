@@ -56,16 +56,6 @@
 		B1E8769320BDA59B006B4BDD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E8769220BDA59B006B4BDD /* Constants.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		299DEFB32231094800BDB9B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2970AD6D1BFA153F007CFBD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 294F78982226942700E2A24F;
-			remoteInfo = SDOSEnvironmentScript;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		294F78972226942700E2A24F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -542,6 +532,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2970AD8F1BFA153F007CFBD9 /* Build configuration list for PBXNativeTarget "SDOSEnvironmentExample" */;
 			buildPhases = (
+				2940E4372231185B0057986A /* Xcode Version */,
 				494E506AC9214046915A9206 /* [CP] Check Pods Manifest.lock */,
 				293F2595222599ED001DC22B /* Encrypt environment.plist */,
 				2970AD711BFA153F007CFBD9 /* Sources */,
@@ -552,7 +543,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				299DEFB42231094800BDB9B0 /* PBXTargetDependency */,
 			);
 			name = SDOSEnvironmentExample;
 			productName = BaseProject;
@@ -652,6 +642,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironmentScript\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${PROJECT_DIR}/App/Configuration/Properties/environments.bin\" -of \"${PROJECT_DIR}/App/Others/Autogenerate/SDOSEnvironment.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/environments.plist\"\n";
 		};
+		2940E4372231185B0057986A /* Xcode Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Xcode Version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "file=\"$SRCROOT/XcodeVersion.properties\"\n\n# create file if it does not exist\ntouch \"${file}\"\n\n# if file does not exist or it is not readable -> error\nif [ ! -r \"${file}\" ]\nthen\necho \"error: Could not create file: ${file} (see the Xcode Version script in Build Phases)\"\nerror -1\nfi\n# read the keys and values in the file\nwhile IFS='=' read -r key value\ndo\neval \"${key}='${value}'\"\ndone < \"${file}\"\n\n# if not defined the keys: XCODE_VERSION_MAJOR_REQUIRED, XCODE_VERSION_MINOR_REQUIRED, XCODE_VERSION_ACTUAL_REQUIRED\nif ([ -z ${XCODE_VERSION_MAJOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_MINOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_ACTUAL_REQUIRED:+\"1\"} ])\nthen\necho \"XCODE_VERSION_MAJOR_REQUIRED=${XCODE_VERSION_MAJOR}\" > \"${file}\"\necho \"XCODE_VERSION_MINOR_REQUIRED=${XCODE_VERSION_MINOR}\" >> \"${file}\"\necho \"XCODE_VERSION_ACTUAL_REQUIRED=${XCODE_VERSION_ACTUAL}\" >> \"${file}\"\n\necho \"warning: Required Xcode version set to ${XCODE_VERSION_ACTUAL} in this project. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nelif ([ ${XCODE_VERSION_MAJOR_REQUIRED} != ${XCODE_VERSION_MAJOR} ] || [ ${XCODE_VERSION_MINOR_REQUIRED} != ${XCODE_VERSION_MINOR} ])\nthen\necho \"error: [SDOS error] - The required version of Xcode to run this project is ${XCODE_VERSION_MINOR_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_MINOR}. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nerror 0\nelif ([ ${XCODE_VERSION_ACTUAL_REQUIRED} != ${XCODE_VERSION_ACTUAL} ])\nthen\necho \"warning: [SDOS warning] - XCODE VERSION CONFLICT: The required version of Xcode to run this project is ${XCODE_VERSION_ACTUAL_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_ACTUAL}. This might cause some problems at runtime.\"\nfi\n";
+		};
 		29AFB2041C04BFEE004AB1B6 /* Mogenerator */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -747,14 +755,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		299DEFB42231094800BDB9B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 294F78982226942700E2A24F /* SDOSEnvironmentScript */;
-			targetProxy = 299DEFB32231094800BDB9B0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		298FD6341C0701E500BA707E /* Localizable.strings */ = {
