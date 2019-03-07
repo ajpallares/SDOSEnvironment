@@ -11,12 +11,12 @@ import SDOSEnvironment
 /// Reference file: /App/Configuration/Properties/environments.plist
 struct Environment {
 	private init() { }
+	/// Variable reference: EnvironmentDescription
+	static var environmentDescription: String { return SDOSEnvironment.getValue(key: "EnvironmentDescription") }
 	/// Variable reference: googleAnalyticsKey
 	static var googleAnalyticsKey: String { return SDOSEnvironment.getValue(key: "googleAnalyticsKey") }
 	/// Variable reference: octopushMode
 	static var octopushMode: String { return SDOSEnvironment.getValue(key: "octopushMode") }
-	/// Variable reference: EnvironmentDescription
-	static var environmentDescription: String { return SDOSEnvironment.getValue(key: "EnvironmentDescription") }
 	/// Variable reference: showSelectedEnvironmentsOnLoad
 	static var showSelectedEnvironmentsOnLoad: String { return SDOSEnvironment.getValue(key: "showSelectedEnvironmentsOnLoad") }
 	/// Variable reference: wsBaseUrl

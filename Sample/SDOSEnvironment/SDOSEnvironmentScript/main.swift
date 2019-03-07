@@ -154,6 +154,7 @@ class ScriptAction {
             print("Fallo durante el tratamiento del plist. Comprueba que el fichero de entrada es correcto. Ruta de entrada: \"\(input!)\"")
             exit(1)
         }
+        keys = keys?.sorted { $0 < $1 }
         return keys
     }
     
