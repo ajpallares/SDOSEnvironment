@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "294F78982226942700E2A24F"
-               BuildableName = "SDOSEnvironmentScript"
+               BuildableName = "SDOSEnvironment"
                BlueprintName = "SDOSEnvironmentScript"
                ReferencedContainer = "container:SDOSEnvironmentExample.xcodeproj">
             </BuildableReference>

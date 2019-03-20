@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "294F78982226942700E2A24F"
-               BuildableName = "SDOSEnvironmentScript"
+               BuildableName = "SDOSEnvironment"
                BlueprintName = "SDOSEnvironmentScript"
                ReferencedContainer = "container:SDOSEnvironmentExample.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "294F78982226942700E2A24F"
-            BuildableName = "SDOSEnvironmentScript"
+            BuildableName = "SDOSEnvironment"
             BlueprintName = "SDOSEnvironmentScript"
             ReferencedContainer = "container:SDOSEnvironmentExample.xcodeproj">
          </BuildableReference>
@@ -56,14 +56,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "294F78982226942700E2A24F"
-            BuildableName = "SDOSEnvironmentScript"
+            BuildableName = "SDOSEnvironment"
             BlueprintName = "SDOSEnvironmentScript"
             ReferencedContainer = "container:SDOSEnvironmentExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-o ${PROJECT_DIR}/App/Configuration/Properties/environments.bin"
+            argument = "-o ${PROJECT_DIR}/App/Configuration/Properties/Environments.bin"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -75,7 +75,11 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-i ${PROJECT_DIR}/App/Configuration/Properties/environments.plist"
+            argument = "-i ${PROJECT_DIR}/App/Configuration/Properties/Environments.plist"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-validate Debug"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
@@ -93,7 +97,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "294F78982226942700E2A24F"
-            BuildableName = "SDOSEnvironmentScript"
+            BuildableName = "SDOSEnvironment"
             BlueprintName = "SDOSEnvironmentScript"
             ReferencedContainer = "container:SDOSEnvironmentExample.xcodeproj">
          </BuildableReference>

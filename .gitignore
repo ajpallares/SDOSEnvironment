@@ -52,4 +52,4 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 
-src/Scripts/SDOSEnvironmentScript.swiftmodule
+src/Scripts/*.swiftmodule
