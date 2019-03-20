@@ -13,7 +13,7 @@ public let defaultEnvironmentKey = "Production"
 
 @objc public class SDOSEnvironment: NSObject {
     
-    private static let userDefaultEnvironmentkey = "\(type(of: self))\(#keyPath(environmentKey))"
+    private static let userDefaultEnvironmentkey = "SDOSEnvironment.key"
     private static let sharedInstance = SDOSEnvironment()
     private var environmentValues: EnvironmentType!
     private var isDebug: Bool = false
@@ -33,7 +33,7 @@ public let defaultEnvironmentKey = "Production"
     
     private override init() { }
     
-    @objc public static func configure(file: String = "environments.bin", password: String? = nil, environmentKey: String? = defaultEnvironmentKey, debug: Bool = false) {
+    @objc public static func configure(file: String = "Environments.bin", password: String? = nil, environmentKey: String? = defaultEnvironmentKey, debug: Bool = false) {
         sharedInstance.isDebug(debug: debug)
         sharedInstance.configure(file: file, password: password, environmentKey: environmentKey)
     }
@@ -94,13 +94,17 @@ public let defaultEnvironmentKey = "Production"
     
     private func checkEnvironmentValues() {
         if self.isDebug {
+            #if !RELEASE
             environmentValues.forEach { (key, value) in
-                if let value = value[environmentKey] as? String, value.isEmpty {
-                    #if !RELEASE
+                var finalValue = ""
+                if let obj = self.environmentValues[key] {
+                    finalValue = normalizeValue(value: obj[environmentKey])
+                }
+                guard !finalValue.isEmpty else {
                     fatalError("Falta el valor para la clave \"\(key)\" en el entorno \"\(self.environmentKey)\"")
-                    #endif
                 }
             }
+            #endif
         }
     }
     
@@ -108,22 +112,28 @@ public let defaultEnvironmentKey = "Production"
         self.isDebug = debug
     }
     
+    func normalizeValue(value: Any?) -> String {
+        var finalValue = ""
+        switch value {
+        case let value as String:
+            finalValue = String(value)
+        case let value as Int:
+            finalValue = String(value)
+        case let value as Float:
+            finalValue = String(value)
+        case let value as Double:
+            finalValue = String(value)
+        case let value as Bool:
+            finalValue = String(value)
+        default: break
+        }
+        return finalValue
+    }
+    
     func getValue(key: String) -> String {
         var finalValue = ""
         if let obj = self.environmentValues[key] {
-            switch obj[environmentKey] {
-            case let value as String:
-                finalValue = String(value)
-            case let value as Int:
-                finalValue = String(value)
-            case let value as Float:
-                finalValue = String(value)
-            case let value as Double:
-                finalValue = String(value)
-            case let value as Bool:
-                finalValue = String(value)
-            default: break
-            }
+            finalValue = normalizeValue(value: obj[environmentKey])
         }
         if isDebug {
             print("[\(type(of: self))] Get key \"\(key)\" for environment \"\(self.environmentKey)\"")

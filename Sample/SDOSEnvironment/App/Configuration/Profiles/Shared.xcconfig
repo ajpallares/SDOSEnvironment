@@ -7,5 +7,5 @@
 //  
 
 //Aplicación
-APP_NAME = KZBootstrap
+APP_NAME = SDOSEnvironment
 BASE_PRODUCT_PACKAGE_NAME = es.sdos.sdosenvironment

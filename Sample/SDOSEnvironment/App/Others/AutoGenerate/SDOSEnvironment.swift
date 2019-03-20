@@ -1,4 +1,4 @@
-//  FICHERO AUTOGENERADO - NO MODIFICAR
+//  This is a generated file, do not edit!
 //  SDOSEnvironment
 //
 //  Created by SDOS
@@ -8,7 +8,7 @@ import Foundation
 import SDOSEnvironment
 
 /// This Environment is generated and contains static references to 5 variables
-/// Reference file: /App/Configuration/Properties/environments.plist
+/// Reference file: /App/Configuration/Properties/Environments.plist
 struct Environment {
 	private init() { }
 	/// Variable reference: EnvironmentDescription

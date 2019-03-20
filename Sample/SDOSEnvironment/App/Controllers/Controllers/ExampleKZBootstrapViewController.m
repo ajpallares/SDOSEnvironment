@@ -75,10 +75,6 @@
     //self.textViewKZBootstrap.scrollEnabled = NO;
     [self.textViewKZBootstrap setAttributedText:finalAttrStr];
     //self.textViewKZBootstrap.scrollEnabled = YES;
-    
-    
-    
-    [KZBootstrapEnviromentsManager changeToExecutionEnvironment];
 }
 
 

@@ -26,6 +26,7 @@ class ScriptAction {
     var output: String!
     var outputFile: String!
     var password: String!
+    var validateEnvironment: String?
     
     var parameters = [ConsoleParameter]()
     
@@ -41,6 +42,7 @@ class ScriptAction {
     }
     
     func executeAction() {
+        validateFile()
         encrypt()
         generateFile()
     }
@@ -98,6 +100,13 @@ class ScriptAction {
         }
         parameters.append(parameter5)
         
+        let parameter6 = ConsoleParameter(numArgs: 1, option: "-validate") { values in
+            let result = values[1]
+            self.validateEnvironment = result
+            return true
+        }
+        parameters.append(parameter6)
+        
     }
     
     func generatePassword(bundle: String) -> String {
@@ -123,19 +132,21 @@ class ScriptAction {
             let encryptor = RNCryptor.EncryptorV3(password: password)
             let encryptData = encryptor.encrypt(data: data)
             try encryptData.write(to: URL(fileURLWithPath: output))
+            print("Fichero \(input!) encriptado correctamente en la ruta \(output!)")
         } catch {
             print("Fallo durante la encriptación. Comprueba que el fichero de entrada es correcto. Ruta de entrada: \"\(input!)\"")
-            exit(1)
+            exit(6)
         }
     }
     
     func printUsage() {
-        print("Los valores validos son los siguientes")
-        print("-i ruta del fichero de entrada. Debe ser un .plist (Ejemplo: environments.plist)")
-        print("-o ruta del fichero encriptado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: environments.bin)")
+        print("Los valores válidos son los siguientes")
+        print("-i Ruta del fichero de entrada. Debe ser un .plist (Ejemplo: environments.plist)")
+        print("-o Ruta del fichero encriptado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: environments.bin)")
         print("-b Bundle identifier de la aplicación. Se usará para generar la contraseña del fichero encriptado en base a éste")
         print("-p Contraseña usada para encriptar el fichero. Si se indica el parámetro -b, éste no tendrá efecto")
-        print("-of ruta del fichero autogenerado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: SDOSEnvironment.swift)")
+        print("-of Ruta del fichero autogenerado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: SDOSEnvironment.swift)")
+        print("-validate String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido")
     }
     
     //MARK: - Parse plist
@@ -152,7 +163,7 @@ class ScriptAction {
             }
         } catch {
             print("Fallo durante el tratamiento del plist. Comprueba que el fichero de entrada es correcto. Ruta de entrada: \"\(input!)\"")
-            exit(1)
+            exit(5)
         }
         keys = keys?.sorted { $0 < $1 }
         return keys
@@ -168,14 +179,14 @@ class ScriptAction {
             try file.write(to: URL(fileURLWithPath: outputFile), atomically: true, encoding: .utf8)
         } catch {
             print("Fallo durante la generación del fichero autogenerado. Comprueba que el fichero de entrada es correcto. Ruta de entrada: \"\(input!)\"")
-            exit(1)
+            exit(4)
         }
         
     }
     
     func generateComment() -> String {
         var result = ""
-        result.append(contentsOf: "//  FICHERO AUTOGENERADO - NO MODIFICAR\n")
+        result.append(contentsOf: "//  This is a generated file, do not edit!\n")
         result.append(contentsOf: "//  \(fileName)\n")
         result.append(contentsOf: "//\n")
         result.append(contentsOf: "//  Created by SDOS\n")
@@ -281,6 +292,52 @@ class ScriptAction {
         return result
     }
     
+}
+
+extension ScriptAction {
+    
+    typealias EnvironmentType = [String: [String: Any]]
+    
+    func validateFile() {
+        if let validateEnvironment = validateEnvironment {
+            do {
+                let url = URL(fileURLWithPath: input)
+                let data = try Data(contentsOf: url)
+                if let values = try PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? EnvironmentType {
+                    values.forEach { (key, value) in
+                        let finalValue = normalizeValue(value: value[validateEnvironment])
+                        guard !finalValue.isEmpty else {
+                            print("Falta el valor para la clave \"\(key)\" en el entorno \"\(validateEnvironment)\"")
+                            exit(2)
+                        }
+                    }
+                }
+                print("Fichero \(input!) válido para el entorno \"\(validateEnvironment)\"")
+            } catch {
+                print("Fallo durante la inicialización. Comprueba el fichero \(input!) tiene un formato correcto")
+                exit(3)
+            }
+        }
+    }
+    
+    func normalizeValue(value: Any?) -> String {
+        var finalValue = ""
+        switch value {
+        case let value as String:
+            finalValue = String(value)
+        case let value as Int:
+            finalValue = String(value)
+        case let value as Float:
+            finalValue = String(value)
+        case let value as Double:
+            finalValue = String(value)
+        case let value as Bool:
+            finalValue = String(value)
+        default: break
+        }
+        return finalValue
+    }
+
 }
 
 ScriptAction().start(args: CommandLine.arguments)

@@ -52,14 +52,6 @@
              @"EnvironmentDescription" : [ConstantsSwift getEnvironmentDescription]};
 }
 
-+ (NSString *)executionEnvironment {
-    return [Constants getCurrentEnvironment];
-}
-
-+(void)changeToExecutionEnvironment {
-    [SDOSEnvironment changeEnvironmentKey:[self executionEnvironment]];
-}
-
 #pragma mark -
 #pragma mark Singleton Methods
 

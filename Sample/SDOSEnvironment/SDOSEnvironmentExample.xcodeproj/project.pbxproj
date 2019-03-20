@@ -6,34 +6,9 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		29AFB1FF1C04BFE7004AB1B6 /* Mogenerator */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 29AFB2031C04BFE7004AB1B6 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
-			buildPhases = (
-				29AFB2041C04BFEE004AB1B6 /* Mogenerator */,
-			);
-			dependencies = (
-			);
-			name = Mogenerator;
-			productName = Mogenerator;
-		};
-		29AFB2171C04C3C4004AB1B6 /* AutoGenerate */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 29AFB2181C04C3C4004AB1B6 /* Build configuration list for PBXAggregateTarget "AutoGenerate" */;
-			buildPhases = (
-				29AFB21C1C04C3C9004AB1B6 /* AutoGenerate */,
-			);
-			dependencies = (
-			);
-			name = AutoGenerate;
-			productName = AutoGenerate;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		2907D2CE222FD23000CD7E1D /* ConstantsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */; };
-		293F259722259A4D001DC22B /* environments.bin in Resources */ = {isa = PBXBuildFile; fileRef = 293F259622259A4D001DC22B /* environments.bin */; };
+		293F259722259A4D001DC22B /* Environments.bin in Resources */ = {isa = PBXBuildFile; fileRef = 293F259622259A4D001DC22B /* Environments.bin */; };
 		294F789C2226942700E2A24F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F789B2226942700E2A24F /* main.swift */; };
 		294F78A82226973E00E2A24F /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78A42226973E00E2A24F /* RNCryptor.swift */; };
 		294F78B322269EFD00E2A24F /* ConsoleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78B222269EFD00E2A24F /* ConsoleParameter.swift */; };
@@ -72,9 +47,9 @@
 		17EFE1856AE679994C7C312D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		264674AD2E9336432AACE6AC /* Pods-SDOSEnvironmentExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSEnvironmentExample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSEnvironmentExample/Pods-SDOSEnvironmentExample.production.xcconfig"; sourceTree = "<group>"; };
 		2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSwift.swift; sourceTree = "<group>"; };
-		293F2594222599C4001DC22B /* environments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = environments.plist; sourceTree = "<group>"; };
-		293F259622259A4D001DC22B /* environments.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = environments.bin; sourceTree = "<group>"; };
-		294F78992226942700E2A24F /* SDOSEnvironmentScript */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDOSEnvironmentScript; sourceTree = BUILT_PRODUCTS_DIR; };
+		293F2594222599C4001DC22B /* Environments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Environments.plist; sourceTree = "<group>"; };
+		293F259622259A4D001DC22B /* Environments.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = Environments.bin; sourceTree = "<group>"; };
+		294F78992226942700E2A24F /* SDOSEnvironment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDOSEnvironment; sourceTree = BUILT_PRODUCTS_DIR; };
 		294F789B2226942700E2A24F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		294F78A42226973E00E2A24F /* RNCryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
 		294F78A72226973E00E2A24F /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
@@ -248,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				2970AD751BFA153F007CFBD9 /* SDOSEnvironmentExample.app */,
-				294F78992226942700E2A24F /* SDOSEnvironmentScript */,
+				294F78992226942700E2A24F /* SDOSEnvironment */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,8 +253,8 @@
 		298FD5C11C0701E500BA707E /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				293F259622259A4D001DC22B /* environments.bin */,
-				293F2594222599C4001DC22B /* environments.plist */,
+				293F259622259A4D001DC22B /* Environments.bin */,
+				293F2594222599C4001DC22B /* Environments.plist */,
 			);
 			path = Properties;
 			sourceTree = "<group>";
@@ -525,7 +500,7 @@
 			);
 			name = SDOSEnvironmentScript;
 			productName = SDOSEnvironmentScript;
-			productReference = 294F78992226942700E2A24F /* SDOSEnvironmentScript */;
+			productReference = 294F78992226942700E2A24F /* SDOSEnvironment */;
 			productType = "com.apple.product-type.tool";
 		};
 		2970AD741BFA153F007CFBD9 /* SDOSEnvironmentExample */ = {
@@ -575,12 +550,6 @@
 							};
 						};
 					};
-					29AFB1FF1C04BFE7004AB1B6 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-					29AFB2171C04C3C4004AB1B6 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
 				};
 			};
 			buildConfigurationList = 2970AD701BFA153F007CFBD9 /* Build configuration list for PBXProject "SDOSEnvironmentExample" */;
@@ -598,8 +567,6 @@
 			projectRoot = "";
 			targets = (
 				2970AD741BFA153F007CFBD9 /* SDOSEnvironmentExample */,
-				29AFB1FF1C04BFE7004AB1B6 /* Mogenerator */,
-				29AFB2171C04C3C4004AB1B6 /* AutoGenerate */,
 				294F78982226942700E2A24F /* SDOSEnvironmentScript */,
 			);
 		};
@@ -617,7 +584,7 @@
 				298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */,
 				298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */,
 				298FD6711C0701E500BA707E /* Localizable.strings in Resources */,
-				293F259722259A4D001DC22B /* environments.bin in Resources */,
+				293F259722259A4D001DC22B /* Environments.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,7 +607,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironmentScript\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${PROJECT_DIR}/App/Configuration/Properties/environments.bin\" -of \"${PROJECT_DIR}/App/Others/Autogenerate/SDOSEnvironment.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/environments.plist\"\n";
+			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironment\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${PROJECT_DIR}/App/Configuration/Properties/Environments.bin\" -of \"${PROJECT_DIR}/App/Others/Autogenerate/SDOSEnvironment.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/Environments.plist\" -validate ${SDOSEnvironment}\n";
 		};
 		2940E4372231185B0057986A /* Xcode Version */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -659,34 +626,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "file=\"$SRCROOT/XcodeVersion.properties\"\n\n# create file if it does not exist\ntouch \"${file}\"\n\n# if file does not exist or it is not readable -> error\nif [ ! -r \"${file}\" ]\nthen\necho \"error: Could not create file: ${file} (see the Xcode Version script in Build Phases)\"\nerror -1\nfi\n# read the keys and values in the file\nwhile IFS='=' read -r key value\ndo\neval \"${key}='${value}'\"\ndone < \"${file}\"\n\n# if not defined the keys: XCODE_VERSION_MAJOR_REQUIRED, XCODE_VERSION_MINOR_REQUIRED, XCODE_VERSION_ACTUAL_REQUIRED\nif ([ -z ${XCODE_VERSION_MAJOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_MINOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_ACTUAL_REQUIRED:+\"1\"} ])\nthen\necho \"XCODE_VERSION_MAJOR_REQUIRED=${XCODE_VERSION_MAJOR}\" > \"${file}\"\necho \"XCODE_VERSION_MINOR_REQUIRED=${XCODE_VERSION_MINOR}\" >> \"${file}\"\necho \"XCODE_VERSION_ACTUAL_REQUIRED=${XCODE_VERSION_ACTUAL}\" >> \"${file}\"\n\necho \"warning: Required Xcode version set to ${XCODE_VERSION_ACTUAL} in this project. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nelif ([ ${XCODE_VERSION_MAJOR_REQUIRED} != ${XCODE_VERSION_MAJOR} ] || [ ${XCODE_VERSION_MINOR_REQUIRED} != ${XCODE_VERSION_MINOR} ])\nthen\necho \"error: [SDOS error] - The required version of Xcode to run this project is ${XCODE_VERSION_MINOR_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_MINOR}. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nerror 0\nelif ([ ${XCODE_VERSION_ACTUAL_REQUIRED} != ${XCODE_VERSION_ACTUAL} ])\nthen\necho \"warning: [SDOS warning] - XCODE VERSION CONFLICT: The required version of Xcode to run this project is ${XCODE_VERSION_ACTUAL_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_ACTUAL}. This might cause some problems at runtime.\"\nfi\n";
-		};
-		29AFB2041C04BFEE004AB1B6 /* Mogenerator */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Mogenerator;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/mogenerator --human-dir \"App/DataSource/Domain\" --machine-dir \"App/DataSource/Domain/AutoGenerate\" --template-var arc=true -m \"App/DataSource/DatabaseScheme/<name>.xcdatamodeld/\"";
-		};
-		29AFB21C1C04C3C9004AB1B6 /* AutoGenerate */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = AutoGenerate;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/SDOS/src/Scripts/SDOS.sh\"\n";
 		};
 		29AFB21D1C04C7CB004AB1B6 /* Warnings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -797,7 +736,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SDOSEnvironment;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "SDOSEnvironmentScript/SDOSEnvironmentScript-Bridging-Header.h";
@@ -857,7 +796,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SDOSEnvironment;
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "SDOSEnvironmentScript/SDOSEnvironmentScript-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -916,7 +855,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SDOSEnvironment;
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "SDOSEnvironmentScript/SDOSEnvironmentScript-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1134,48 +1073,6 @@
 			};
 			name = Production;
 		};
-		29AFB2001C04BFE7004AB1B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		29AFB2011C04BFE7004AB1B6 /* Preproduction */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Preproduction;
-		};
-		29AFB2021C04BFE7004AB1B6 /* Production */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Production;
-		};
-		29AFB2191C04C3C4004AB1B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		29AFB21A1C04C3C4004AB1B6 /* Preproduction */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Preproduction;
-		};
-		29AFB21B1C04C3C4004AB1B6 /* Production */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Production;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1205,26 +1102,6 @@
 				2970AD901BFA153F007CFBD9 /* Debug */,
 				2970AD911BFA153F007CFBD9 /* Preproduction */,
 				29AFB1E71C04A0F8004AB1B6 /* Production */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Preproduction;
-		};
-		29AFB2031C04BFE7004AB1B6 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				29AFB2001C04BFE7004AB1B6 /* Debug */,
-				29AFB2011C04BFE7004AB1B6 /* Preproduction */,
-				29AFB2021C04BFE7004AB1B6 /* Production */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Preproduction;
-		};
-		29AFB2181C04C3C4004AB1B6 /* Build configuration list for PBXAggregateTarget "AutoGenerate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				29AFB2191C04C3C4004AB1B6 /* Debug */,
-				29AFB21A1C04C3C4004AB1B6 /* Preproduction */,
-				29AFB21B1C04C3C4004AB1B6 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Preproduction;
