@@ -10,13 +10,26 @@ import RNCryptor
 
 typealias EnvironmentType = [String: [String: Any]]
 public let defaultEnvironmentKey = "Production"
+let EnvionmentKeyInfoPlist = "EnvironmentKey"
 
 @objc public class SDOSEnvironment: NSObject {
     
     private static let userDefaultEnvironmentkey = "SDOSEnvironment.key"
     private static let sharedInstance = SDOSEnvironment()
     private var environmentValues: EnvironmentType!
-    private var isDebug: Bool = false
+    private var _isDebug: Bool = false
+    private var isDebug: Bool {
+        get {
+            var result = _isDebug
+            if environmentKey == defaultEnvironmentKey {
+                result = false
+            }
+            return result
+        }
+        set {
+            _isDebug = newValue
+        }
+    }
     @objc private var environmentKey: String {
         get {
             let value = UserDefaults.standard.string(forKey: SDOSEnvironment.userDefaultEnvironmentkey)
@@ -31,11 +44,29 @@ public let defaultEnvironmentKey = "Production"
         }
     }
     
+    @objc static public var environmentKey: String {
+        return sharedInstance.environmentKey
+    }
+    
     private override init() { }
     
-    @objc public static func configure(file: String = "Environments.bin", password: String? = nil, environmentKey: String? = defaultEnvironmentKey, debug: Bool = false) {
+    static private func environmentKeyConfigFile() -> String {
+        var result = defaultEnvironmentKey
+        if let key = Bundle.main.object(forInfoDictionaryKey: EnvionmentKeyInfoPlist) as? String {
+            result = key
+        }
+        return result
+    }
+    
+    @objc public static func configure(file: String = "Environments.bin", password: String? = nil, environmentKey: String? = nil, debug: Bool = false) {
+        var key: String
+        if let environmentKey = environmentKey {
+            key = environmentKey
+        } else {
+            key = environmentKeyConfigFile()
+        }
         sharedInstance.isDebug(debug: debug)
-        sharedInstance.configure(file: file, password: password, environmentKey: environmentKey)
+        sharedInstance.configure(file: file, password: password, environmentKey: key)
     }
     
     @objc public static func changeEnvironmentKey(_ environmentKey: String) {
@@ -50,7 +81,7 @@ public let defaultEnvironmentKey = "Production"
         sharedInstance.isDebug(debug: debug)
     }
     
-    private func configure(file: String, password pwd: String?, environmentKey: String?) {
+    private func configure(file: String, password pwd: String?, environmentKey: String) {
         var password: String
         if let key = pwd {
             password = key
@@ -70,11 +101,7 @@ public let defaultEnvironmentKey = "Production"
                     environmentValues = values
                     
                     //Asignación de la clave de entorno
-                    var finalKey = self.environmentKey
-                    if let environmentKey = environmentKey {
-                        finalKey = environmentKey
-                    }
-                    changeEnvironmentKey(finalKey)
+                    changeEnvironmentKey(environmentKey)
                 }
             } catch {
                 fatalError("Fallo durante la inicialización. Comprueba que la clave de desencriptación es correcta")
