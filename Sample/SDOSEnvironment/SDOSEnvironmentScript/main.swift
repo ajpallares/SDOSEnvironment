@@ -8,8 +8,6 @@
 
 import Foundation
 
-let fileName = "SDOSEnvironment"
-
 extension String {
     func lowerCaseFirstLetter() -> String {
         return prefix(1).lowercased() + self.dropFirst()
@@ -42,6 +40,7 @@ class ScriptAction {
     }
     
     func executeAction() {
+        validateInputOutput()
         validateFile()
         encrypt()
         generateFile()
@@ -131,7 +130,10 @@ class ScriptAction {
             let data = try Data(contentsOf: url)
             let encryptor = RNCryptor.EncryptorV3(password: password)
             let encryptData = encryptor.encrypt(data: data)
-            try encryptData.write(to: URL(fileURLWithPath: output))
+            let urlFinal = URL(fileURLWithPath: output)
+            unlockFile(output)
+            try encryptData.write(to: urlFinal)
+            lockFile(output)
             print("Fichero \(input!) encriptado correctamente en la ruta \(output!)")
         } catch {
             print("Fallo durante la encriptación. Comprueba que el fichero de entrada es correcto. Ruta de entrada: \"\(input!)\"")
@@ -176,7 +178,9 @@ class ScriptAction {
         file.append(contentsOf: generateImplementation(keys: keys))
         
         do {
+            unlockFile(outputFile)
             try file.write(to: URL(fileURLWithPath: outputFile), atomically: true, encoding: .utf8)
+            lockFile(outputFile)
         } catch {
             print("Fallo durante la generación del fichero autogenerado. Comprueba que el fichero de entrada es correcto. Ruta de entrada: \"\(input!)\"")
             exit(4)
@@ -185,9 +189,13 @@ class ScriptAction {
     }
     
     func generateComment() -> String {
+        var name = ""
+        if let url = URL(string: self.outputFile) {
+            name = url.lastPathComponent
+        }
         var result = ""
         result.append(contentsOf: "//  This is a generated file, do not edit!\n")
-        result.append(contentsOf: "//  \(fileName)\n")
+        result.append(contentsOf: "//  \(name)\n")
         result.append(contentsOf: "//\n")
         result.append(contentsOf: "//  Created by SDOS\n")
         result.append(contentsOf: "//\n")
@@ -206,7 +214,7 @@ class ScriptAction {
             
             result.append(contentsOf: "")
             result.append(contentsOf: "/// This Environment is generated and contains static references to \(keys.count) variables\n")
-            result.append(contentsOf: "/// Reference file: \(fileRelativePath)\n")
+            result.append(contentsOf: "/// Reference file: \(fileRelativePath.replacingOccurrences(of: pwd, with: ""))\n")
             result.append(contentsOf: "struct Environment {\n")
             result.append(contentsOf: "\tprivate init() { }\n")
             
@@ -338,6 +346,69 @@ extension ScriptAction {
         return finalValue
     }
 
+}
+
+extension ScriptAction {
+    enum TypeParams: String {
+        case INPUT
+        case OUTPUT
+    }
+    
+    func validateInputOutput() {
+        checkInput(params: parseParams(type: .INPUT), sources: [self.input])
+        checkOutput(params: parseParams(type: .OUTPUT), sources: [self.output, self.outputFile])
+    }
+    
+    func parseParams(type: TypeParams) -> [String] {
+        var params = [String]()
+        if let numString = ProcessInfo.processInfo.environment["SCRIPT_\(type.rawValue)_FILE_COUNT"] {
+            if let num = Int(numString) {
+                for i in 0...num {
+                    if let param = ProcessInfo.processInfo.environment["SCRIPT_\(type.rawValue)_FILE_\(i)"] {
+                        params.append(param)
+                    }
+                }
+            }
+        }
+        return params
+    }
+    
+    func checkInput(params: [String], sources: [String]) {
+        checkInputOutput(params: params, sources: sources, message: "Build phase Intput Files does not contain")
+    }
+    
+    func checkOutput(params: [String], sources: [String]) {
+        checkInputOutput(params: params, sources: sources, message: "Build phase Output Files does not contain")
+    }
+    
+    func checkInputOutput(params: [String], sources: [String], message: String) {
+        for source in sources {
+            if !params.contains(source) {
+                print("[SDOSEnvironment] - \(message) '\(source.replacingOccurrences(of: pwd, with: "${SRCROOT}"))'.")
+                exit(7)
+            }
+        }
+    }
+}
+
+extension ScriptAction {
+    func unlockFile(_ path: String) {
+        shell("chflags", "-R", "nouchg", path)
+    }
+    
+    func lockFile(_ path: String) {
+        shell("chflags", "uchg", path)
+    }
+    
+    @discardableResult
+    func shell(_ args: String...) -> Int32 {
+        let task = Process()
+        task.launchPath = "/usr/bin/env"
+        task.arguments = args
+        task.launch()
+        task.waitUntilExit()
+        return task.terminationStatus
+    }
 }
 
 ScriptAction().start(args: CommandLine.arguments)
