@@ -3,23 +3,9 @@
    LastUpgradeVersion = "0710"
    version = "1.3">
    <BuildAction
-      parallelizeBuildables = "NO"
+      parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "294F78982226942700E2A24F"
-               BuildableName = "SDOSEnvironment"
-               BlueprintName = "SDOSEnvironmentScript"
-               ReferencedContainer = "container:SDOSEnvironmentExample.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"

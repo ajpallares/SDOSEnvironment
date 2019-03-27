@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2907D2CE222FD23000CD7E1D /* ConstantsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */; };
-		293F259722259A4D001DC22B /* Environments.bin in Resources */ = {isa = PBXBuildFile; fileRef = 293F259622259A4D001DC22B /* Environments.bin */; };
 		294F789C2226942700E2A24F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F789B2226942700E2A24F /* main.swift */; };
 		294F78A82226973E00E2A24F /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78A42226973E00E2A24F /* RNCryptor.swift */; };
 		294F78B322269EFD00E2A24F /* ConsoleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78B222269EFD00E2A24F /* ConsoleParameter.swift */; };
@@ -21,7 +20,8 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
-		299DEFB22231015B00BDB9B0 /* SDOSEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299DEFB12231015B00BDB9B0 /* SDOSEnvironment.swift */; };
+		29AC7B88224A906200F4CA84 /* EnvironmentGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AC7B87224A906200F4CA84 /* EnvironmentGenerated.swift */; };
+		29AC7B90224A9B3500F4CA84 /* Environments.bin in Resources */ = {isa = PBXBuildFile; fileRef = 29AC7B8E224A9B3400F4CA84 /* Environments.bin */; };
 		5CB7FE7B1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7FE7A1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m */; };
 		5CB7FE7D1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB7FE7C1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard */; };
 		5CB7FE801DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7FE7F1DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m */; };
@@ -30,6 +30,16 @@
 		B1E8768F20BD9095006B4BDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8768E20BD9095006B4BDD /* AppDelegate.swift */; };
 		B1E8769320BDA59B006B4BDD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E8769220BDA59B006B4BDD /* Constants.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29D1035C224B592A00B787BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2970AD6D1BFA153F007CFBD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 294F78982226942700E2A24F;
+			remoteInfo = SDOSEnvironmentScript;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		294F78972226942700E2A24F /* CopyFiles */ = {
@@ -47,8 +57,6 @@
 		17EFE1856AE679994C7C312D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		264674AD2E9336432AACE6AC /* Pods-SDOSEnvironmentExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSEnvironmentExample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSEnvironmentExample/Pods-SDOSEnvironmentExample.production.xcconfig"; sourceTree = "<group>"; };
 		2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSwift.swift; sourceTree = "<group>"; };
-		293F2594222599C4001DC22B /* Environments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Environments.plist; sourceTree = "<group>"; };
-		293F259622259A4D001DC22B /* Environments.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = Environments.bin; sourceTree = "<group>"; };
 		294F78992226942700E2A24F /* SDOSEnvironment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDOSEnvironment; sourceTree = BUILT_PRODUCTS_DIR; };
 		294F789B2226942700E2A24F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		294F78A42226973E00E2A24F /* RNCryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
@@ -79,7 +87,11 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
-		299DEFB12231015B00BDB9B0 /* SDOSEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDOSEnvironment.swift; sourceTree = "<group>"; };
+		29AC7B87224A906200F4CA84 /* EnvironmentGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentGenerated.swift; sourceTree = "<group>"; };
+		29AC7B8D224A9B3400F4CA84 /* Environments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Environments.plist; sourceTree = "<group>"; };
+		29AC7B8E224A9B3400F4CA84 /* Environments.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = Environments.bin; sourceTree = "<group>"; };
+		29D1035E224B5C0E00B787BF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../../CHANGELOG.md; sourceTree = "<group>"; };
+		29D1035F224B5C0E00B787BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		5CB7FE791DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentationKZBootstrapViewController.h; sourceTree = "<group>"; };
 		5CB7FE7A1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationKZBootstrapViewController.m; sourceTree = "<group>"; };
 		5CB7FE7C1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleKZBootstrap.storyboard; sourceTree = "<group>"; };
@@ -211,6 +223,8 @@
 		2970AD6C1BFA153F007CFBD9 = {
 			isa = PBXGroup;
 			children = (
+				29D1035E224B5C0E00B787BF /* CHANGELOG.md */,
+				29D1035F224B5C0E00B787BF /* README.md */,
 				290A16A21BFB3146002361EF /* App */,
 				294F789A2226942700E2A24F /* SDOSEnvironmentScript */,
 				2970AD761BFA153F007CFBD9 /* Products */,
@@ -253,8 +267,8 @@
 		298FD5C11C0701E500BA707E /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				293F259622259A4D001DC22B /* Environments.bin */,
-				293F2594222599C4001DC22B /* Environments.plist */,
+				29AC7B8E224A9B3400F4CA84 /* Environments.bin */,
+				29AC7B8D224A9B3400F4CA84 /* Environments.plist */,
 			);
 			path = Properties;
 			sourceTree = "<group>";
@@ -380,7 +394,7 @@
 		298FD6271C0701E500BA707E /* AutoGenerate */ = {
 			isa = PBXGroup;
 			children = (
-				299DEFB12231015B00BDB9B0 /* SDOSEnvironment.swift */,
+				29AC7B87224A906200F4CA84 /* EnvironmentGenerated.swift */,
 				298FD62A1C0701E500BA707E /* Leeme.txt */,
 				298FD6751C0706D400BA707E /* ImagesConstants.h */,
 				298FD6291C0701E500BA707E /* KZBootstrapConstants.h */,
@@ -518,6 +532,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				29D1035D224B592A00B787BF /* PBXTargetDependency */,
 			);
 			name = SDOSEnvironmentExample;
 			productName = BaseProject;
@@ -557,6 +572,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				es,
@@ -577,6 +593,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29AC7B90224A9B3500F4CA84 /* Environments.bin in Resources */,
 				298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */,
 				298FD6731C0701E500BA707E /* default.bundle in Resources */,
 				5CB7FE7D1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard in Resources */,
@@ -584,7 +601,6 @@
 				298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */,
 				298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */,
 				298FD6711C0701E500BA707E /* Localizable.strings in Resources */,
-				293F259722259A4D001DC22B /* Environments.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,15 +615,18 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${SRCROOT}/App/Configuration/Properties/Environments.plist",
 			);
 			name = "Encrypt environment.plist";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${SRCROOT}/App/Configuration/Properties/Environments.bin",
+				"${SRCROOT}/App/Others/Autogenerate/EnvironmentGenerated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironment\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${PROJECT_DIR}/App/Configuration/Properties/Environments.bin\" -of \"${PROJECT_DIR}/App/Others/Autogenerate/SDOSEnvironment.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/Environments.plist\" -validate ${SDOSEnvironment}\n";
+			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironment\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${SRCROOT}/App/Configuration/Properties/Environments.bin\" -of \"${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/Environments.plist\" -validate-environment ${SDOSEnvironment} --unlock-files\n";
 		};
 		2940E4372231185B0057986A /* Xcode Version */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -685,15 +704,23 @@
 				5CB7FE831DC9D6EA0053E1A8 /* KZBootstrapEnviromentsManager.m in Sources */,
 				B1E8768F20BD9095006B4BDD /* AppDelegate.swift in Sources */,
 				B1E8769320BDA59B006B4BDD /* Constants.m in Sources */,
+				29AC7B88224A906200F4CA84 /* EnvironmentGenerated.swift in Sources */,
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
 				5CB7FE7B1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m in Sources */,
-				299DEFB22231015B00BDB9B0 /* SDOSEnvironment.swift in Sources */,
 				5CB7FE801DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29D1035D224B592A00B787BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 294F78982226942700E2A24F /* SDOSEnvironmentScript */;
+			targetProxy = 29D1035C224B592A00B787BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		298FD6341C0701E500BA707E /* Localizable.strings */ = {

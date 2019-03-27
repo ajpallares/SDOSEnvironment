@@ -67,7 +67,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-of ${PROJECT_DIR}/App/Others/Autogenerate/SDOSEnvironment.swift"
+            argument = "-of ${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -79,10 +79,41 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-validate Debug"
+            argument = "-validate-environment Debug"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--unlock-files"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "SCRIPT_INPUT_FILE_COUNT"
+            value = "1"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SCRIPT_INPUT_FILE_0"
+            value = "${PROJECT_DIR}/App/Configuration/Properties/Environments.plist"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SCRIPT_OUTPUT_FILE_COUNT"
+            value = "2"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SCRIPT_OUTPUT_FILE_0"
+            value = "${PROJECT_DIR}/App/Configuration/Properties/Environments.bin"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SCRIPT_OUTPUT_FILE_1"
+            value = "${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
