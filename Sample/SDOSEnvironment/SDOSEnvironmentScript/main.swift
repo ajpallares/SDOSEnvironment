@@ -25,6 +25,7 @@ class ScriptAction {
     var outputFile: String!
     var password: String!
     var validateEnvironment: String?
+    var disableInputOutputFilesValidation = false
     
     var parameters = [ConsoleParameter]()
     
@@ -105,6 +106,12 @@ class ScriptAction {
             return true
         }
         parameters.append(parameter6)
+        
+        let parameter7 = ConsoleParameter(numArgs: 0, option: "--disable-input-output-files-validation") { values in
+            self.disableInputOutputFilesValidation = true
+            return true
+        }
+        parameters.append(parameter7)
         
     }
     
@@ -355,6 +362,9 @@ extension ScriptAction {
     }
     
     func validateInputOutput() {
+        guard !disableInputOutputFilesValidation else {
+            return
+        }
         checkInput(params: parseParams(type: .INPUT), sources: [self.input])
         checkOutput(params: parseParams(type: .OUTPUT), sources: [self.output, self.outputFile])
     }
