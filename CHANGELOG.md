@@ -1,3 +1,7 @@
+## [0.9.5 Implementado código de error al imprimir la ayuda](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v0.9.5)
+
+- Cuando imprimimos la ayuda ahora el script finalizará con un código de error para parar la ejecución de los comandos
+
 ## [0.9.4 Añadido soporte para el nuevo Build System](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v0.9.4)
 
 - Se ha añadido soporte para el nuevo Build System. Ahora es necesario poner las rutas correctas en los campos input files y output files
