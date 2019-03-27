@@ -65,7 +65,7 @@ class ScriptAction {
         }
         parameters.append(parameter1)
         
-        let parameter2 = ConsoleParameter(numArgs: 1, option: "-o") { values in
+        let parameter2 = ConsoleParameter(numArgs: 1, option: "-output-bin") { values in
             var result = values[1]
             if let pwd = self.pwd, !result.hasPrefix("/") {
                 result = "\(pwd)/\(result)"
@@ -91,7 +91,7 @@ class ScriptAction {
         }
         parameters.append(parameter4)
         
-        let parameter5 = ConsoleParameter(numArgs: 1, option: "-of") { values in
+        let parameter5 = ConsoleParameter(numArgs: 1, option: "-output-file") { values in
             var result = values[1]
             if let pwd = self.pwd, !result.hasPrefix("/") {
                 result = "\(pwd)/\(result)"
