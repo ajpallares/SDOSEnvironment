@@ -165,6 +165,7 @@ class ScriptAction {
         print("-validate-environment String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido")
         print("--disable-input-output-files-validation Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a Legacy Build System")
         print("--unlock-files Indica que los ficheros de salida no se deben bloquear en el sistema")
+        exit(1)
     }
     
     //MARK: - Parse plist
