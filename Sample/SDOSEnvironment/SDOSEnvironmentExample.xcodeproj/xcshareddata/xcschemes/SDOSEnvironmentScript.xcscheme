@@ -79,7 +79,11 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-validate Debug"
+            argument = "-validate-environment Debug"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--unlock-files"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

@@ -622,7 +622,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironment\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${SRCROOT}/App/Configuration/Properties/Environments.bin\" -of \"${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/Environments.plist\" -validate ${SDOSEnvironment}\n";
+			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironment\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -o \"${SRCROOT}/App/Configuration/Properties/Environments.bin\" -of \"${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/Environments.plist\" -validate-environment ${SDOSEnvironment} --unlock-files\n";
 		};
 		2940E4372231185B0057986A /* Xcode Version */ = {
 			isa = PBXShellScriptBuildPhase;

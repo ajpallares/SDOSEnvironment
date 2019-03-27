@@ -26,6 +26,7 @@ class ScriptAction {
     var password: String!
     var validateEnvironment: String?
     var disableInputOutputFilesValidation = false
+    var unlockFiles = false
     
     var parameters = [ConsoleParameter]()
     
@@ -100,7 +101,7 @@ class ScriptAction {
         }
         parameters.append(parameter5)
         
-        let parameter6 = ConsoleParameter(numArgs: 1, option: "-validate") { values in
+        let parameter6 = ConsoleParameter(numArgs: 1, option: "-validate-environment") { values in
             let result = values[1]
             self.validateEnvironment = result
             return true
@@ -112,6 +113,12 @@ class ScriptAction {
             return true
         }
         parameters.append(parameter7)
+        
+        let parameter8 = ConsoleParameter(numArgs: 0, option: "--unlock-files") { values in
+            self.unlockFiles = true
+            return true
+        }
+        parameters.append(parameter8)
         
     }
     
@@ -155,7 +162,9 @@ class ScriptAction {
         print("-b Bundle identifier de la aplicación. Se usará para generar la contraseña del fichero encriptado en base a éste")
         print("-p Contraseña usada para encriptar el fichero. Si se indica el parámetro -b, éste no tendrá efecto")
         print("-of Ruta del fichero autogenerado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: SDOSEnvironment.swift)")
-        print("-validate String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido")
+        print("-validate-environment String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido")
+        print("--disable-input-output-files-validation Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a Legacy Build System")
+        print("--unlock-files Indica que los ficheros de salida no se deben bloquear en el sistema")
     }
     
     //MARK: - Parse plist
@@ -407,6 +416,9 @@ extension ScriptAction {
     }
     
     func lockFile(_ path: String) {
+        guard !unlockFiles else {
+            return
+        }
         shell("chflags", "uchg", path)
     }
     
