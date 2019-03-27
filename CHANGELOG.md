@@ -1,3 +1,7 @@
+## [0.9.6 Cambios de nombres de parámetros](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v0.9.6)
+
+- Modificados los parámetros de salida de ficheros a -output-bin y -output-file
+
 ## [0.9.5 Implementado código de error al imprimir la ayuda](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v0.9.5)
 
 - Cuando imprimimos la ayuda ahora el script finalizará con un código de error para parar la ejecución de los comandos
