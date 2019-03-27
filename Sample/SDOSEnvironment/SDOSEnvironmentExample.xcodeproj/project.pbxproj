@@ -31,6 +31,16 @@
 		B1E8769320BDA59B006B4BDD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E8769220BDA59B006B4BDD /* Constants.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		29D1035C224B592A00B787BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2970AD6D1BFA153F007CFBD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 294F78982226942700E2A24F;
+			remoteInfo = SDOSEnvironmentScript;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		294F78972226942700E2A24F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -518,6 +528,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				29D1035D224B592A00B787BF /* PBXTargetDependency */,
 			);
 			name = SDOSEnvironmentExample;
 			productName = BaseProject;
@@ -698,6 +709,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29D1035D224B592A00B787BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 294F78982226942700E2A24F /* SDOSEnvironmentScript */;
+			targetProxy = 29D1035C224B592A00B787BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		298FD6341C0701E500BA707E /* Localizable.strings */ = {
