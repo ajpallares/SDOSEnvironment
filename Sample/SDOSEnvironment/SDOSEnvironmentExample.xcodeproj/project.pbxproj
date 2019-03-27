@@ -90,6 +90,8 @@
 		29AC7B87224A906200F4CA84 /* EnvironmentGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentGenerated.swift; sourceTree = "<group>"; };
 		29AC7B8D224A9B3400F4CA84 /* Environments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Environments.plist; sourceTree = "<group>"; };
 		29AC7B8E224A9B3400F4CA84 /* Environments.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = Environments.bin; sourceTree = "<group>"; };
+		29D1035E224B5C0E00B787BF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../../CHANGELOG.md; sourceTree = "<group>"; };
+		29D1035F224B5C0E00B787BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		5CB7FE791DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentationKZBootstrapViewController.h; sourceTree = "<group>"; };
 		5CB7FE7A1DC9CA820053E1A8 /* DocumentationKZBootstrapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationKZBootstrapViewController.m; sourceTree = "<group>"; };
 		5CB7FE7C1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleKZBootstrap.storyboard; sourceTree = "<group>"; };
@@ -221,6 +223,8 @@
 		2970AD6C1BFA153F007CFBD9 = {
 			isa = PBXGroup;
 			children = (
+				29D1035E224B5C0E00B787BF /* CHANGELOG.md */,
+				29D1035F224B5C0E00B787BF /* README.md */,
 				290A16A21BFB3146002361EF /* App */,
 				294F789A2226942700E2A24F /* SDOSEnvironmentScript */,
 				2970AD761BFA153F007CFBD9 /* Products */,
