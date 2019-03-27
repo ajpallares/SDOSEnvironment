@@ -8,7 +8,7 @@ import Foundation
 import SDOSEnvironment
 
 /// This Environment is generated and contains static references to 5 variables
-/// Reference file: /App/Configuration/Properties/Environments.plist
+/// Reference file: /Users/lukanor/Documents/GIT-specs/SDOSEnvironment/Sample/SDOSEnvironment/App/Configuration/Properties/Environments.plist
 struct Environment {
 	private init() { }
 	/// Variable reference: EnvironmentDescription
