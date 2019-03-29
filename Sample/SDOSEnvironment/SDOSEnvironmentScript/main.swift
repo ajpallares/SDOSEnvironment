@@ -84,7 +84,7 @@ class ScriptAction {
         
         let parameter4 = ConsoleParameter(numArgs: 1, option: "-p") { values in
             let result = values[1]
-            if self.password != nil {
+            if self.password == nil {
                 self.password = result
             }
             return true
@@ -158,10 +158,10 @@ class ScriptAction {
     func printUsage() {
         print("Los valores válidos son los siguientes")
         print("-i Ruta del fichero de entrada. Debe ser un .plist (Ejemplo: environments.plist)")
-        print("-o Ruta del fichero encriptado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: environments.bin)")
+        print("-output-bin Ruta del fichero encriptado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: environments.bin)")
         print("-b Bundle identifier de la aplicación. Se usará para generar la contraseña del fichero encriptado en base a éste")
-        print("-p Contraseña usada para encriptar el fichero. Si se indica el parámetro -b, éste no tendrá efecto")
-        print("-of Ruta del fichero autogenerado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: SDOSEnvironment.swift)")
+        print("-p Contraseña usada para encriptar el fichero. Éste paraámetro no tendrá en cuenta si se ha indicado el parámetro -b")
+        print("-output-file Ruta del fichero autogenerado de salida. Debe incluir el nombre del fichero a generar (Ejemplo: SDOSEnvironment.swift)")
         print("-validate-environment String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido")
         print("--disable-input-output-files-validation Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a Legacy Build System")
         print("--unlock-files Indica que los ficheros de salida no se deben bloquear en el sistema")

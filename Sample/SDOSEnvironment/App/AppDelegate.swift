@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         var aaa = SDOSEnvironment.environmentKey
-        SDOSEnvironment.configure(debug: true)
+        SDOSEnvironment.configure(activeLogging: true)
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         

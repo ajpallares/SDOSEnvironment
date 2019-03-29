@@ -523,7 +523,7 @@
 			buildPhases = (
 				2940E4372231185B0057986A /* Xcode Version */,
 				494E506AC9214046915A9206 /* [CP] Check Pods Manifest.lock */,
-				293F2595222599ED001DC22B /* Encrypt environment.plist */,
+				293F2595222599ED001DC22B /* SDOSEnvironment - Encrypt environments */,
 				2970AD711BFA153F007CFBD9 /* Sources */,
 				2970AD721BFA153F007CFBD9 /* Frameworks */,
 				2970AD731BFA153F007CFBD9 /* Resources */,
@@ -607,7 +607,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		293F2595222599ED001DC22B /* Encrypt environment.plist */ = {
+		293F2595222599ED001DC22B /* SDOSEnvironment - Encrypt environments */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -617,7 +617,7 @@
 			inputPaths = (
 				"${SRCROOT}/App/Configuration/Properties/Environments.plist",
 			);
-			name = "Encrypt environment.plist";
+			name = "SDOSEnvironment - Encrypt environments";
 			outputFileListPaths = (
 			);
 			outputPaths = (
