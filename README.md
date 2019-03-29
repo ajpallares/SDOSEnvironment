@@ -7,6 +7,7 @@
       - [Qué hace el script](#qu%C3%A9-hace-el-script)
       - [Anotaciones](#anotaciones)
     - [Código](#c%C3%B3digo)
+  - [Dependencias](#dependencias)
   - [Referencias](#referencias)
 # SDOSEnvironment
 
@@ -105,6 +106,9 @@ Para usar la librería sólo es necesario lanzar la configuración inicial de la
     ```
     Environment.wsUrl
     ```
+
+## Dependencias
+* [RNCryptor](https://github.com/RNCryptor/RNCryptor) - 5.x
 
 ## Referencias
 * https://svrgitpub.sdos.es/iOS/SDOSEnvironment

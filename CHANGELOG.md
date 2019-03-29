@@ -1,3 +1,9 @@
+## [1.0.0 Documentación](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v1.0.0)
+
+- Subida la documentación de la librería
+- Cambios de visibilidad en los métodos privados
+- Modificación del nombre *debug* por *activeLogging*
+
 ## [0.9.6 Cambios de nombres de parámetros](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v0.9.6)
 
 - Modificados los parámetros de salida de ficheros a -output-bin y -output-file

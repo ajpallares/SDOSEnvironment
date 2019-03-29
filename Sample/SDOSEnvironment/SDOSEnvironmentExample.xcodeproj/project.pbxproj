@@ -521,8 +521,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2970AD8F1BFA153F007CFBD9 /* Build configuration list for PBXNativeTarget "SDOSEnvironmentExample" */;
 			buildPhases = (
-				2940E4372231185B0057986A /* Xcode Version */,
 				494E506AC9214046915A9206 /* [CP] Check Pods Manifest.lock */,
+				2940E4372231185B0057986A /* Xcode Version */,
 				293F2595222599ED001DC22B /* SDOSEnvironment - Encrypt environments */,
 				2970AD711BFA153F007CFBD9 /* Sources */,
 				2970AD721BFA153F007CFBD9 /* Frameworks */,
