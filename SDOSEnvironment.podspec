@@ -18,6 +18,6 @@ Pod::Spec.new do |spec|
     s1.source_files = ['src/Classes/*{*.m,*.h,*.swift}', 'src/Classes/**/*{*.m,*.h,*.swift}']
   end
   
-  spec.dependency 'RNCryptor'
+  spec.dependency 'RNCryptor', '~> 5.0'
 
 end
