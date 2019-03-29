@@ -1,4 +1,4 @@
-@version = "0.9.6"
+@version = "1.0.0"
 Pod::Spec.new do |spec|
   spec.platform     = :ios, '9.0'
   spec.name         = 'SDOSEnvironment'
@@ -18,6 +18,6 @@ Pod::Spec.new do |spec|
     s1.source_files = ['src/Classes/*{*.m,*.h,*.swift}', 'src/Classes/**/*{*.m,*.h,*.swift}']
   end
   
-  spec.dependency 'RNCryptor'
+  spec.dependency 'RNCryptor', '~> 5.0'
 
 end

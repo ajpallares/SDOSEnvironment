@@ -8,26 +8,26 @@
 import Foundation
 import RNCryptor
 
-typealias EnvironmentType = [String: [String: Any]]
 public let defaultEnvironmentKey = "Production"
-let EnvionmentKeyInfoPlist = "EnvironmentKey"
+private typealias EnvironmentType = [String: [String: Any]]
+private let EnvionmentKeyInfoPlist = "EnvironmentKey"
 
 @objc public class SDOSEnvironment: NSObject {
     
     private static let userDefaultEnvironmentkey = "SDOSEnvironment.key"
     private static let sharedInstance = SDOSEnvironment()
     private var environmentValues: EnvironmentType!
-    private var _isDebug: Bool = false
-    private var isDebug: Bool {
+    private var _activeLogging: Bool = false
+    private var activeLogging: Bool {
         get {
-            var result = _isDebug
+            var result = _activeLogging
             if environmentKey == defaultEnvironmentKey {
                 result = false
             }
             return result
         }
         set {
-            _isDebug = newValue
+            _activeLogging = newValue
         }
     }
     @objc private var environmentKey: String {
@@ -58,14 +58,14 @@ let EnvionmentKeyInfoPlist = "EnvironmentKey"
         return result
     }
     
-    @objc public static func configure(file: String = "Environments.bin", password: String? = nil, environmentKey: String? = nil, debug: Bool = false) {
+    @objc public static func configure(file: String = "Environments.bin", password: String? = nil, environmentKey: String? = nil, activeLogging: Bool = false) {
         var key: String
         if let environmentKey = environmentKey {
             key = environmentKey
         } else {
             key = environmentKeyConfigFile()
         }
-        sharedInstance.isDebug(debug: debug)
+        sharedInstance.activeLogging(activeLogging: activeLogging)
         sharedInstance.configure(file: file, password: password, environmentKey: key)
     }
     
@@ -77,8 +77,8 @@ let EnvionmentKeyInfoPlist = "EnvironmentKey"
         return sharedInstance.getValue(key: key)
     }
     
-    @objc public static func isDebug(debug: Bool) {
-        sharedInstance.isDebug(debug: debug)
+    @objc public static func activeLogging(activeLogging: Bool) {
+        sharedInstance.activeLogging(activeLogging: activeLogging)
     }
     
     private func configure(file: String, password pwd: String?, environmentKey: String) {
@@ -114,13 +114,13 @@ let EnvionmentKeyInfoPlist = "EnvironmentKey"
     private func changeEnvironmentKey(_ environmentKey: String) {
         self.environmentKey = environmentKey
         checkEnvironmentValues()
-        if isDebug {
+        if activeLogging {
             print("[\(type(of: self))] Selected environment: \"\(self.environmentKey)\"")
         }
     }
     
     private func checkEnvironmentValues() {
-        if self.isDebug {
+        if self.activeLogging {
             #if !RELEASE
             environmentValues.forEach { (key, value) in
                 var finalValue = ""
@@ -135,11 +135,11 @@ let EnvionmentKeyInfoPlist = "EnvironmentKey"
         }
     }
     
-    @objc public func isDebug(debug: Bool) {
-        self.isDebug = debug
+    @objc private func activeLogging(activeLogging: Bool) {
+        self.activeLogging = activeLogging
     }
     
-    func normalizeValue(value: Any?) -> String {
+    private func normalizeValue(value: Any?) -> String {
         var finalValue = ""
         switch value {
         case let value as String:
@@ -157,19 +157,19 @@ let EnvionmentKeyInfoPlist = "EnvironmentKey"
         return finalValue
     }
     
-    func getValue(key: String) -> String {
+    private func getValue(key: String) -> String {
         var finalValue = ""
         if let obj = self.environmentValues[key] {
             finalValue = normalizeValue(value: obj[environmentKey])
         }
-        if isDebug {
+        if activeLogging {
             print("[\(type(of: self))] Get key \"\(key)\" for environment \"\(self.environmentKey)\"")
         }
         
         return finalValue
     }
     
-    func generateDefaultPassword() -> String {
+    private func generateDefaultPassword() -> String {
         let bundle = Bundle.main.bundleIdentifier
         var password = ""
         var bytes = [UInt8]()
