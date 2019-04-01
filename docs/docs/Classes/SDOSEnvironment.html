@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SDOSEnvironment Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SDOSEnvironment" class="dashAnchor"></a>
+    <a title="SDOSEnvironment Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SDOSEnvironment Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://svrgitpub.sdos.es/iOS/SDOSEnvironment"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SDOSEnvironment Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SDOSEnvironment Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/SDOSEnvironment.html">SDOSEnvironment</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15SDOSEnvironment21defaultEnvironmentKeySSvp">defaultEnvironmentKey</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SDOSEnvironment</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SDOSEnvironment</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Clase que permite el uso de variables de entorno a partir de un fichero .plist previamente encriptado por el script SDOSEnviroment.</p>
+
+<p>La librería consultará el fichero indicado durante la configuración, el cual deberá estar encriptado y se deberá usar la misma clave para desencriptarlo.
+La estructura del .plist deberá ser la siguiente:</p>
+<pre class="highlight xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>wsBaseUrl<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>Debug<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>http://debug.es<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;key&gt;</span>Preproduction<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>http://preproduction.es<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;key&gt;</span>Production<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>http://production.es<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</code></pre>
+
+<p>(Dictionaty)variable-&gt;(Dictionary)environment-&gt;(String)value</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cpy)environmentKey"></a>
+                    <a name="//apple_ref/swift/Variable/environmentKey" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cpy)environmentKey">environmentKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtiene el entorno que actualmente está seleccionado</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">environmentKey</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cm)configureWithFile:password:environmentKey:activeLogging:"></a>
+                    <a name="//apple_ref/swift/Method/configure(file:password:environmentKey:activeLogging:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cm)configureWithFile:password:environmentKey:activeLogging:">configure(file:password:environmentKey:activeLogging:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configura los parámetros usados para poder usar las variables de entorno</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">configure</span><span class="p">(</span><span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Environments.bin"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">environmentKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">activeLogging</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>file</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Fichero encriptado para extraer las variables de entorno. Default: Environments.bin</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Contraseña para desencriptar las variables de entorno. Default: Contraseña generada a partir del paquete de la aplicación</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>environmentKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Nombre del entorno del que se deberán recuperar los valores de las variables. Default: Production</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>activeLogging</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Indica si se debe activar el log del uso de la librería. No se imprimirán logs si el environmentKey es <q>Production</q>. Default: false</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cm)changeEnvironmentKey:"></a>
+                    <a name="//apple_ref/swift/Method/changeEnvironmentKey(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cm)changeEnvironmentKey:">changeEnvironmentKey(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cambia el actual entorno del que se deben recuperar las variables de entorno</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">changeEnvironmentKey</span><span class="p">(</span><span class="n">_</span> <span class="nv">environmentKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>environmentKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Nuevo entorno</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cm)getValueWithKey:"></a>
+                    <a name="//apple_ref/swift/Method/getValue(key:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cm)getValueWithKey:">getValue(key:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtiene el valor de una variable a partir de la configuración realizada</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getValue</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Clave para recupera su valor</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Valor del entorno configurado</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cm)activeLoggingWithActiveLogging:"></a>
+                    <a name="//apple_ref/swift/Method/activeLogging(activeLogging:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@SDOSEnvironment@objc(cs)SDOSEnvironment(cm)activeLoggingWithActiveLogging:">activeLogging(activeLogging:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Activa o desactiva el log de la librería</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">activeLogging</span><span class="p">(</span><span class="nv">activeLogging</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>activeLogging</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Nuevo valor</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://sdos.es" target="_blank" rel="external">SDOS</a>. All rights reserved. (Last updated: 2019-04-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
