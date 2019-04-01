@@ -1,0 +1,11 @@
+#For generate documentation install "https://github.com/realm/jazzy" and use the command `jazzy` in terminal
+
+output: docs/docs
+clean: true
+author: SDOS
+author_url: https://sdos.es
+module: SDOSEnvironment
+github_url: https://svrgitpub.sdos.es/iOS/SDOSEnvironment
+github_file_prefix: https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/master
+skip_undocumented: true
+xcodebuild_arguments: [-workspace, SDOSEnvironmentExample.xcworkspace, -scheme, SDOSEnvironment]
