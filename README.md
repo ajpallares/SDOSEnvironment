@@ -101,11 +101,11 @@ Para usar la librería sólo es necesario lanzar la configuración inicial de la
 
 
 3. Lanzar la configuración de la librería:
-    ```
+    ```js
     SDOSEnvironment.configure(activeLogging: true)
     ```
 4. Usar el código autogenerado donde se requiera
-    ```
+    ```js
     Environment.wsUrl
     ```
 
