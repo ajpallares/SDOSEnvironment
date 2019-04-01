@@ -12,7 +12,8 @@
 
 # SDOSEnvironment
 
-Enlace confluence: https://kc.sdos.es/x/PwLLAQ
+- Enlace confluence: https://kc.sdos.es/x/PwLLAQ
+- Documentación: https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/master/docs/docs/index.html
 
 ## Introducción
 SDOSEnvironment es una librería que permite configurar constantes que tengan valores diferentes para cada **entorno de ejecución** (*Debug, Preproduction, Production, etc*). Esto es muy útil para casos como **url de ws**, **claves de analíticas**, etc, donde en cada entorno de ejecución pueden ser diferentes. Con está librería cada entorno dispondrá de los valores correctos, sin necesidad de modificarlos dependiendo del que queramos ejecutar.

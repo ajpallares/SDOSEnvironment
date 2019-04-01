@@ -1,6 +1,6 @@
 #For generate documentation install "https://github.com/realm/jazzy" and use the command `jazzy` in terminal
 
-output: docs/docs
+output: ../../docs/docs
 clean: true
 author: SDOS
 author_url: https://sdos.es
