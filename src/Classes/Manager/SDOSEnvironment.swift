@@ -8,10 +8,36 @@
 import Foundation
 import RNCryptor
 
+/// Entorno por defecto: Production
 public let defaultEnvironmentKey = "Production"
 private typealias EnvironmentType = [String: [String: Any]]
 private let EnvionmentKeyInfoPlist = "EnvironmentKey"
 
+/**
+Clase que permite el uso de variables de entorno a partir de un fichero .plist previamente encriptado por el script SDOSEnviroment.
+
+La librería consultará el fichero indicado durante la configuración, el cual deberá estar encriptado y se deberá usar la misma clave para desencriptarlo.
+La estructura del .plist deberá ser la siguiente:
+
+ ```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>wsBaseUrl</key>
+    <dict>
+        <key>Debug</key>
+        <string>http://debug.es</string>
+        <key>Preproduction</key>
+        <string>http://preproduction.es</string>
+        <key>Production</key>
+        <string>http://production.es</string>
+    </dict>
+</dict>
+</plist>
+```
+(Dictionaty)variable->(Dictionary)environment->(String)value
+ */
 @objc public class SDOSEnvironment: NSObject {
     
     private static let userDefaultEnvironmentkey = "SDOSEnvironment.key"
@@ -44,6 +70,7 @@ private let EnvionmentKeyInfoPlist = "EnvironmentKey"
         }
     }
     
+    /// Obtiene el entorno que actualmente está seleccionado
     @objc static public var environmentKey: String {
         return sharedInstance.environmentKey
     }
@@ -58,6 +85,13 @@ private let EnvionmentKeyInfoPlist = "EnvironmentKey"
         return result
     }
     
+    /// Configura los parámetros usados para poder usar las variables de entorno
+    ///
+    /// - Parameters:
+    ///   - file: Fichero encriptado para extraer las variables de entorno. Default: Environments.bin
+    ///   - password: Contraseña para desencriptar las variables de entorno. Default: Contraseña generada a partir del paquete de la aplicación
+    ///   - environmentKey: Nombre del entorno del que se deberán recuperar los valores de las variables. Default: Production
+    ///   - activeLogging: Indica si se debe activar el log del uso de la librería. No se imprimirán logs si el environmentKey es "Production". Default: false
     @objc public static func configure(file: String = "Environments.bin", password: String? = nil, environmentKey: String? = nil, activeLogging: Bool = false) {
         var key: String
         if let environmentKey = environmentKey {
@@ -69,14 +103,24 @@ private let EnvionmentKeyInfoPlist = "EnvironmentKey"
         sharedInstance.configure(file: file, password: password, environmentKey: key)
     }
     
+    /// Cambia el actual entorno del que se deben recuperar las variables de entorno
+    ///
+    /// - Parameter environmentKey: Nuevo entorno
     @objc public static func changeEnvironmentKey(_ environmentKey: String) {
         sharedInstance.changeEnvironmentKey(environmentKey)
     }
     
+    /// Obtiene el valor de una variable a partir de la configuración realizada
+    ///
+    /// - Parameter key: Clave para recupera su valor
+    /// - Returns: Valor del entorno configurado
     @objc public static func getValue(key: String) -> String {
         return sharedInstance.getValue(key: key)
     }
     
+    /// Activa o desactiva el log de la librería
+    ///
+    /// - Parameter activeLogging: Nuevo valor
     @objc public static func activeLogging(activeLogging: Bool) {
         sharedInstance.activeLogging(activeLogging: activeLogging)
     }

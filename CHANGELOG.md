@@ -1,3 +1,7 @@
+## [1.0.1 Documentación](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v1.0.1)
+
+- Subida documentación del código
+
 ## [1.0.0 Documentación](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v1.0.0)
 
 - Subida la documentación de la librería

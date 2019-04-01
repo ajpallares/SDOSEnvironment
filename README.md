@@ -6,9 +6,10 @@
     - [Script de encriptación y generación de código](#script-de-encriptaci%C3%B3n-y-generaci%C3%B3n-de-c%C3%B3digo)
       - [Qué hace el script](#qu%C3%A9-hace-el-script)
       - [Anotaciones](#anotaciones)
-    - [Código](#c%C3%B3digo)
+    - [Implementación](#implementaci%C3%B3n)
   - [Dependencias](#dependencias)
   - [Referencias](#referencias)
+
 # SDOSEnvironment
 
 Enlace confluence: https://kc.sdos.es/x/PwLLAQ
@@ -87,7 +88,7 @@ El formato del fichero Environments.plist es el siguiente:
 * Dentro de cada `Dictionary` se crean variables de tipo `Strings` donde cada clave es el entorno y el valor será el que se recupere cuando se solicite 
 
 
-### Código
+### Implementación
 
 Para usar la librería sólo es necesario lanzar la configuración inicial de la librería y usar el código swift que genera el script. Se recomienda añadir como primera línea de ejecución de la aplicación la configuración de la librería:
 1. Añadir el valor `SDOSEnvironment` al `Build Setting` como `User Define` o en los ficheros `.xcconfig` de cada entorno, con su valor correspondiente (*Debug*, *Preproduction* o *Production*)
