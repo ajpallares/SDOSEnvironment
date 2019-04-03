@@ -75,16 +75,17 @@ En cada compilación, si se ha modificado el fichero `${SRCROOT}/main/resources/
 
 El script tiene los siguientes parámetros que pueden incluirse en base a las necesidades del proyecto:
 
-|Parámetro|Descripción|Ejemplo|
-|---------|-----------|-------|
-|`-i [valor]`|Ruta del fichero de entrada. Debe ser un .plist|`${SRCROOT}/main/resources/Environments.plist`|
-|`-output-bin [valor]`|Ruta del fichero encriptado de salida. Debe incluir el nombre del fichero a generar|`${SRCROOT}/main/resources/generated/Environments.bin`|
-|`-b [valor]`|Bundle identifier de la aplicación. Se usará para generar la contraseña del fichero encriptado en base a éste|`${PRODUCT_BUNDLE_IDENTIFIER}` // `es.sdos.bundleid`|
-|`-output-file [valor]`|Ruta del fichero autogenerado de salida. Debe incluir el nombre del fichero a generar|`${SRCROOT}/main/resources/generated/EnvironmentGenerated.swift`|
-|`-validate-environment [valor]`|String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido|`${SDOSEnvironment}` // `Debug`|
-|`-p [valor]`|Contraseña usada para encriptar el fichero. Éste paraámetro no tendrá en cuenta si se ha indicado el parámetro `-b`|`Aa123456`|
-|`--disable-input-output-files-validation`|Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a `Legacy Build System`|
-|`--unlock-files`|Indica que los ficheros de salida no se deben bloquear en el sistema|
+|Parámetro|Obligatorio|Descripción|Ejemplo|
+|---------|-----------|-----------|-------|
+|`-i [valor]`|[x]|Ruta del fichero de entrada. Debe ser un .plist|`${SRCROOT}/main/resources/Environments.plist`|
+|`-output-bin [valor]`|[x]|Ruta del fichero encriptado de salida. Debe incluir el nombre del fichero a generar|`${SRCROOT}/main/resources/generated/Environments.bin`|
+|`-b [valor]`|[x]*|Bundle identifier de la aplicación. Se usará para generar la contraseña del fichero encriptado en base a éste|`${PRODUCT_BUNDLE_IDENTIFIER}` // `es.sdos.bundleid`|
+|`-output-file [valor]`|[x]|Ruta del fichero autogenerado de salida. Debe incluir el nombre del fichero a generar|`${SRCROOT}/main/resources/generated/EnvironmentGenerated.swift`|
+|`-validate-environment [valor]`||String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido|`${SDOSEnvironment}` // `Debug`|
+|`-p [valor]`|[x]*|Contraseña usada para encriptar el fichero. Éste paraámetro no tendrá en cuenta si se ha indicado el parámetro `-b`|`Aa123456`|
+|`--disable-input-output-files-validation`||Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a `Legacy Build System`|
+|`--unlock-files`||Indica que los ficheros de salida no se deben bloquear en el sistema|
+***Uno de los dos valores debe estar en la ejecución del script**
 
 <sup><sub>Puedes consultar la ayuda completa ejecutando `./SDOSEnvironment help` en el terminal</sup></sub>
 
