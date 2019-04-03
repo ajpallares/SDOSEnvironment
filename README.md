@@ -26,7 +26,7 @@ Además, la librería aporta un punto extra de seguridad encriptando el fichero 
 Usaremos [CocoaPods](https://cocoapods.org). Hay que añadir la dependencia al `Podfile`:
 
 ```ruby
-pod 'SDOSEnvironment', '~>1.0.0' 
+pod 'SDOSEnvironment', '~>1.0.1' 
 ```
 
 ## Cómo se usa
