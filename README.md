@@ -43,13 +43,14 @@ El *script de encriptación y generación de código* no se incluye en el binari
 <plist version="1.0">
 <dict>
 	<key>wsUrl</key>
-	<dict/>
-	<key>Debug</key>
-	<string>https://debug.com</string>
-	<key>Preproduction</key>
-	<string>https://preproduction.com</string>
-	<key>Production</key>
-	<string>https://production.com</string>
+	<dict>
+    <key>Debug</key>
+    <string>https://debug.com</string>
+    <key>Preproduction</key>
+    <string>https://preproduction.com</string>
+    <key>Production</key>
+    <string>https://production.com</string>
+  </dict>
 </dict>
 </plist>
 ```
