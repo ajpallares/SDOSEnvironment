@@ -60,7 +60,7 @@ El *script de encriptación y generación de código* no se incluye en el binari
     ```sh
     "${PODS_ROOT}/SDOSEnvironment/src/Scripts/SDOSEnvironment" -b ${PRODUCT_BUNDLE_IDENTIFIER} -i "${SRCROOT}/main/resources/Environments.plist" -output-bin "${SRCROOT}/main/resources/generated/Environments.bin" -output-file "${SRCROOT}/main/resources/generated/EnvironmentGenerated.swift" -validate-environment ${SDOSEnvironment}
     ```
-    <sup><sub>Los valores del script pueden cambiarse en función de las necesidades del proyecto</sup></sub>
+    > Los valores del script pueden cambiarse en función de las necesidades del proyecto
 6. Añadir `${SRCROOT}/main/resources/Environments.plist` al apartado `Input Files`. **No poner comillas**
 7. Añadir `${SRCROOT}/main/resources/generated/Environments.bin` al apartado `Output Files`. **No poner comillas**
 8. Añadir `${SRCROOT}/main/resources/generated/EnvironmentGenerated.swift` al apartado `Output Files`. **No poner comillas**
@@ -87,7 +87,7 @@ El script tiene los siguientes parámetros que pueden incluirse en base a las ne
 |`--unlock-files`||Indica que los ficheros de salida no se deben bloquear en el sistema|
 ***Uno de los dos valores debe estar en la ejecución del script**
 
-<sup><sub>Puedes consultar la ayuda completa ejecutando `./SDOSEnvironment help` en el terminal</sup></sub>
+> Puedes consultar la ayuda completa ejecutando `./SDOSEnvironment help` en el terminal
 
 #### Anotaciones
 El formato del fichero Environments.plist es el siguiente: 
