@@ -13,7 +13,7 @@
 # SDOSEnvironment
 
 - Enlace confluence: https://kc.sdos.es/x/PwLLAQ
-- Documentación: https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/master/docs/docs/index.html
+- Changelog: https://svrgitpub.sdos.es/iOS/SDOSEnvironment/blob/master/CHANGELOG.md
 
 ## Introducción
 SDOSEnvironment es una librería que permite configurar constantes que tengan valores diferentes para cada **entorno de ejecución** (*Debug, Preproduction, Production, etc*). Esto es muy útil para casos como **url de ws**, **claves de analíticas**, etc, donde en cada entorno de ejecución pueden ser diferentes. Con está librería cada entorno dispondrá de los valores correctos, sin necesidad de modificarlos dependiendo del que queramos ejecutar.
@@ -26,7 +26,7 @@ Además, la librería aporta un punto extra de seguridad encriptando el fichero 
 Usaremos [CocoaPods](https://cocoapods.org). Hay que añadir la dependencia al `Podfile`:
 
 ```ruby
-pod 'SDOSEnvironment', '~>1.0.0' 
+pod 'SDOSEnvironment', '~>1.0.1' 
 ```
 
 ## Cómo se usa
@@ -43,13 +43,14 @@ El *script de encriptación y generación de código* no se incluye en el binari
 <plist version="1.0">
 <dict>
 	<key>wsUrl</key>
-	<dict/>
-	<key>Debug</key>
-	<string>https://debug.com</string>
-	<key>Preproduction</key>
-	<string>https://preproduction.com</string>
-	<key>Production</key>
-	<string>https://production.com</string>
+	<dict>
+    <key>Debug</key>
+    <string>https://debug.com</string>
+    <key>Preproduction</key>
+    <string>https://preproduction.com</string>
+    <key>Production</key>
+    <string>https://production.com</string>
+  </dict>
 </dict>
 </plist>
 ```
@@ -60,10 +61,10 @@ El *script de encriptación y generación de código* no se incluye en el binari
     ```sh
     "${PODS_ROOT}/SDOSEnvironment/src/Scripts/SDOSEnvironment" -b ${PRODUCT_BUNDLE_IDENTIFIER} -i "${SRCROOT}/main/resources/Environments.plist" -output-bin "${SRCROOT}/main/resources/generated/Environments.bin" -output-file "${SRCROOT}/main/resources/generated/EnvironmentGenerated.swift" -validate-environment ${SDOSEnvironment}
     ```
-    <sup><sub>Los valores del script pueden cambiarse en función de las necesidades del proyecto</sup></sub>
-6. Añadir `${SRCROOT}/main/resources/Environments.plist` al apartado `Input Files`
-7. Añadir `${SRCROOT}/main/resources/generated/Environments.bin` al apartado `Output Files`
-8. Añadir `${SRCROOT}/main/resources/generated/EnvironmentGenerated.swift` al apartado `Output Files`
+    > Los valores del script pueden cambiarse en función de las necesidades del proyecto
+6. Añadir `${SRCROOT}/main/resources/Environments.plist` al apartado `Input Files`. **No poner comillas**
+7. Añadir `${SRCROOT}/main/resources/generated/Environments.bin` al apartado `Output Files`. **No poner comillas**
+8. Añadir `${SRCROOT}/main/resources/generated/EnvironmentGenerated.swift` al apartado `Output Files`. **No poner comillas**
 9.  Compilar el proyecto. Esto generará los ficheros en la ruta `${SRCROOT}/main/resources/generated/` que deberán ser incluidos en el proyecto
 
 #### Qué hace el script
@@ -73,15 +74,21 @@ En cada compilación, si se ha modificado el fichero `${SRCROOT}/main/resources/
 * Generar el fichero con el código swift en la ruta `-output-file`
 * Validar si todas las variables tienen el entorno indicado en el parámetro `-validate-environment`
 
-Además de estos pasos el script tiene otros parámetros que pueden incluirse en base a las necesidades del proyecto:
+El script tiene los siguientes parámetros que pueden incluirse en base a las necesidades del proyecto:
 
-|Parámetro                                |Descripción                                                                                                        |
-|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-|`-p [valor]`                             |Contraseña usada para encriptar el fichero. Éste paraámetro no tendrá en cuenta si se ha indicado el parámetro `-b`|
-|`--disable-input-output-files-validation`|Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a `Legacy Build System` |
-|`--unlock-files`                         |Indica que los ficheros de salida no se deben bloquear en el sistema                                               |
+|Parámetro|Obligatorio|Descripción|Ejemplo|
+|---------|-----------|-----------|-------|
+|`-i [valor]`|[x]|Ruta del fichero de entrada. Debe ser un .plist|`${SRCROOT}/main/resources/Environments.plist`|
+|`-output-bin [valor]`|[x]|Ruta del fichero encriptado de salida. Debe incluir el nombre del fichero a generar|`${SRCROOT}/main/resources/generated/Environments.bin`|
+|`-b [valor]`|[x]*|Bundle identifier de la aplicación. Se usará para generar la contraseña del fichero encriptado en base a éste|`${PRODUCT_BUNDLE_IDENTIFIER}` // `es.sdos.bundleid`|
+|`-output-file [valor]`|[x]|Ruta del fichero autogenerado de salida. Debe incluir el nombre del fichero a generar|`${SRCROOT}/main/resources/generated/EnvironmentGenerated.swift`|
+|`-validate-environment [valor]`||String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido|`${SDOSEnvironment}` // `Debug`|
+|`-p [valor]`|[x]*|Contraseña usada para encriptar el fichero. Éste paraámetro no tendrá en cuenta si se ha indicado el parámetro `-b`|`Aa123456`|
+|`--disable-input-output-files-validation`||Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a `Legacy Build System`|
+|`--unlock-files`||Indica que los ficheros de salida no se deben bloquear en el sistema|
+***Uno de los dos valores debe estar en la ejecución del script**
 
-<sup><sub>Puedes consultar la ayuda completa ejecutando `./SDOSEnvironment help` en el terminal</sup></sub>
+> Puedes consultar la ayuda completa ejecutando `./SDOSEnvironment help` en el terminal
 
 #### Anotaciones
 El formato del fichero Environments.plist es el siguiente: 
@@ -101,11 +108,11 @@ Para usar la librería sólo es necesario lanzar la configuración inicial de la
 
 
 3. Lanzar la configuración de la librería:
-    ```
+    ```js
     SDOSEnvironment.configure(activeLogging: true)
     ```
 4. Usar el código autogenerado donde se requiera
-    ```
+    ```js
     Environment.wsUrl
     ```
 
