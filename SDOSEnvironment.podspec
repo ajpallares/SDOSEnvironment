@@ -1,4 +1,4 @@
-@version = "1.0.2"
+@version = "1.0.3"
 Pod::Spec.new do |spec|
   spec.platform     = :ios, '9.0'
   spec.name         = 'SDOSEnvironment'
