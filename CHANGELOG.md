@@ -1,3 +1,7 @@
+## [1.0.3 Cambiado bloqueo de ficheros](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v1.0.3)
+
+- Modificada la forma de bloquear los ficheros. Ahora les quita el permiso de escritura
+
 ## [1.0.2 Documentación](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v1.0.2)
 
 - Cambios en la documentación
