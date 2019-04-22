@@ -413,14 +413,18 @@ extension ScriptAction {
 
 extension ScriptAction {
     func unlockFile(_ path: String) {
-        shell("chflags", "-R", "nouchg", path)
+        if FileManager.default.fileExists(atPath: path) {
+            shell("chmod", "644", path)
+        }
     }
     
     func lockFile(_ path: String) {
         guard !unlockFiles else {
             return
         }
-        shell("chflags", "uchg", path)
+        if FileManager.default.fileExists(atPath: path) {
+            shell("chmod", "444", path)
+        }
     }
     
     @discardableResult
