@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2907D2CE222FD23000CD7E1D /* ConstantsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */; };
 		294F789C2226942700E2A24F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F789B2226942700E2A24F /* main.swift */; };
-		294F78A82226973E00E2A24F /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78A42226973E00E2A24F /* RNCryptor.swift */; };
 		294F78B322269EFD00E2A24F /* ConsoleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78B222269EFD00E2A24F /* ConsoleParameter.swift */; };
 		298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
 		298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
@@ -59,9 +58,6 @@
 		2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSwift.swift; sourceTree = "<group>"; };
 		294F78992226942700E2A24F /* SDOSEnvironment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDOSEnvironment; sourceTree = BUILT_PRODUCTS_DIR; };
 		294F789B2226942700E2A24F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		294F78A42226973E00E2A24F /* RNCryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
-		294F78A72226973E00E2A24F /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
-		294F78A9222698A400E2A24F /* SDOSEnvironmentScript-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSEnvironmentScript-Bridging-Header.h"; sourceTree = "<group>"; };
 		294F78B222269EFD00E2A24F /* ConsoleParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleParameter.swift; sourceTree = "<group>"; };
 		2970AD751BFA153F007CFBD9 /* SDOSEnvironmentExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSEnvironmentExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FD5B71C0701E500BA707E /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
@@ -164,52 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				294F78AE22269E8600E2A24F /* ConsoleParameter */,
-				294F78A12226973E00E2A24F /* RNCryptor */,
 				294F789B2226942700E2A24F /* main.swift */,
-				294F78A9222698A400E2A24F /* SDOSEnvironmentScript-Bridging-Header.h */,
 			);
 			path = SDOSEnvironmentScript;
-			sourceTree = "<group>";
-		};
-		294F78A12226973E00E2A24F /* RNCryptor */ = {
-			isa = PBXGroup;
-			children = (
-				294F78A22226973E00E2A24F /* Sources */,
-			);
-			path = RNCryptor;
-			sourceTree = "<group>";
-		};
-		294F78A22226973E00E2A24F /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				294F78A32226973E00E2A24F /* RNCryptor */,
-				294F78A52226973E00E2A24F /* Cryptor */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		294F78A32226973E00E2A24F /* RNCryptor */ = {
-			isa = PBXGroup;
-			children = (
-				294F78A42226973E00E2A24F /* RNCryptor.swift */,
-			);
-			path = RNCryptor;
-			sourceTree = "<group>";
-		};
-		294F78A52226973E00E2A24F /* Cryptor */ = {
-			isa = PBXGroup;
-			children = (
-				294F78A62226973E00E2A24F /* include */,
-			);
-			path = Cryptor;
-			sourceTree = "<group>";
-		};
-		294F78A62226973E00E2A24F /* include */ = {
-			isa = PBXGroup;
-			children = (
-				294F78A72226973E00E2A24F /* RNCryptor.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		294F78AE22269E8600E2A24F /* ConsoleParameter */ = {
@@ -691,7 +644,6 @@
 			files = (
 				294F78B322269EFD00E2A24F /* ConsoleParameter.swift in Sources */,
 				294F789C2226942700E2A24F /* main.swift in Sources */,
-				294F78A82226973E00E2A24F /* RNCryptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

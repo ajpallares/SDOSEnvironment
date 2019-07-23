@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RNCryptor
 
 extension String {
     func lowerCaseFirstLetter() -> String {
