@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2907D2CE222FD23000CD7E1D /* ConstantsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */; };
 		294F789C2226942700E2A24F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F789B2226942700E2A24F /* main.swift */; };
 		294F78B322269EFD00E2A24F /* ConsoleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F78B222269EFD00E2A24F /* ConsoleParameter.swift */; };
+		29514F3822E7135300216A42 /* SDOSEnvironment in Frameworks */ = {isa = PBXBuildFile; productRef = 29514F3722E7135300216A42 /* SDOSEnvironment */; };
 		298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
 		298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
 		298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BD1C0701E500BA707E /* App.debug.xcconfig */; };
@@ -25,20 +26,9 @@
 		5CB7FE7D1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB7FE7C1DC9CB4D0053E1A8 /* ExampleKZBootstrap.storyboard */; };
 		5CB7FE801DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7FE7F1DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m */; };
 		5CB7FE831DC9D6EA0053E1A8 /* KZBootstrapEnviromentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7FE821DC9D6EA0053E1A8 /* KZBootstrapEnviromentsManager.m */; };
-		79A0655D66BB783CB03734A7 /* libPods-SDOSEnvironmentExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1AF0A01DE850030BBBC268 /* libPods-SDOSEnvironmentExample.a */; };
 		B1E8768F20BD9095006B4BDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8768E20BD9095006B4BDD /* AppDelegate.swift */; };
 		B1E8769320BDA59B006B4BDD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E8769220BDA59B006B4BDD /* Constants.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		29D1035C224B592A00B787BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2970AD6D1BFA153F007CFBD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 294F78982226942700E2A24F;
-			remoteInfo = SDOSEnvironmentScript;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		294F78972226942700E2A24F /* CopyFiles */ = {
@@ -54,11 +44,11 @@
 
 /* Begin PBXFileReference section */
 		17EFE1856AE679994C7C312D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		264674AD2E9336432AACE6AC /* Pods-SDOSEnvironmentExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSEnvironmentExample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSEnvironmentExample/Pods-SDOSEnvironmentExample.production.xcconfig"; sourceTree = "<group>"; };
 		2907D2CD222FD23000CD7E1D /* ConstantsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSwift.swift; sourceTree = "<group>"; };
 		294F78992226942700E2A24F /* SDOSEnvironment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDOSEnvironment; sourceTree = BUILT_PRODUCTS_DIR; };
 		294F789B2226942700E2A24F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		294F78B222269EFD00E2A24F /* ConsoleParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleParameter.swift; sourceTree = "<group>"; };
+		29514F3A22E7155900216A42 /* SDOSEnvironmentScript-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSEnvironmentScript-Bridging-Header.h"; sourceTree = "<group>"; };
 		2970AD751BFA153F007CFBD9 /* SDOSEnvironmentExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSEnvironmentExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FD5B71C0701E500BA707E /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		298FD5B81C0701E500BA707E /* SDOSEnvironmentExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDOSEnvironmentExample-Prefix.pch"; sourceTree = "<group>"; };
@@ -95,13 +85,9 @@
 		5CB7FE7F1DC9CBDE0053E1A8 /* ExampleKZBootstrapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleKZBootstrapViewController.m; sourceTree = "<group>"; };
 		5CB7FE811DC9D6EA0053E1A8 /* KZBootstrapEnviromentsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZBootstrapEnviromentsManager.h; sourceTree = "<group>"; };
 		5CB7FE821DC9D6EA0053E1A8 /* KZBootstrapEnviromentsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZBootstrapEnviromentsManager.m; sourceTree = "<group>"; };
-		95B50083E866AFEB47199686 /* Pods-SDOSEnvironmentExample.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSEnvironmentExample.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSEnvironmentExample/Pods-SDOSEnvironmentExample.preproduction.xcconfig"; sourceTree = "<group>"; };
-		9E1AF0A01DE850030BBBC268 /* libPods-SDOSEnvironmentExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDOSEnvironmentExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E8768D20BD9094006B4BDD /* SDOSKZBootstrapExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSKZBootstrapExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		B1E8768E20BD9095006B4BDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E8769220BDA59B006B4BDD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		C4EA5AA6C9C455C5C8D51B7F /* Pods-SDOSEnvironmentExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSEnvironmentExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSEnvironmentExample/Pods-SDOSEnvironmentExample.debug.xcconfig"; sourceTree = "<group>"; };
-		E3F4EEC8BC78D0644915BE19 /* libPods-SDOSEnvironmentScript.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDOSEnvironmentScript.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,29 +102,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79A0655D66BB783CB03734A7 /* libPods-SDOSEnvironmentExample.a in Frameworks */,
+				29514F3822E7135300216A42 /* SDOSEnvironment in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11BC95EDC1824ECF73EAC8D3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C4EA5AA6C9C455C5C8D51B7F /* Pods-SDOSEnvironmentExample.debug.xcconfig */,
-				95B50083E866AFEB47199686 /* Pods-SDOSEnvironmentExample.preproduction.xcconfig */,
-				264674AD2E9336432AACE6AC /* Pods-SDOSEnvironmentExample.production.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		1A3F2B7365F64DEDC650C528 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				17EFE1856AE679994C7C312D /* Pods.framework */,
-				9E1AF0A01DE850030BBBC268 /* libPods-SDOSEnvironmentExample.a */,
-				E3F4EEC8BC78D0644915BE19 /* libPods-SDOSEnvironmentScript.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,6 +133,7 @@
 		294F789A2226942700E2A24F /* SDOSEnvironmentScript */ = {
 			isa = PBXGroup;
 			children = (
+				29514F3A22E7155900216A42 /* SDOSEnvironmentScript-Bridging-Header.h */,
 				294F78AE22269E8600E2A24F /* ConsoleParameter */,
 				294F789B2226942700E2A24F /* main.swift */,
 			);
@@ -182,7 +157,6 @@
 				294F789A2226942700E2A24F /* SDOSEnvironmentScript */,
 				2970AD761BFA153F007CFBD9 /* Products */,
 				1A3F2B7365F64DEDC650C528 /* Frameworks */,
-				11BC95EDC1824ECF73EAC8D3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -474,7 +448,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2970AD8F1BFA153F007CFBD9 /* Build configuration list for PBXNativeTarget "SDOSEnvironmentExample" */;
 			buildPhases = (
-				494E506AC9214046915A9206 /* [CP] Check Pods Manifest.lock */,
 				2940E4372231185B0057986A /* Xcode Version */,
 				293F2595222599ED001DC22B /* SDOSEnvironment - Encrypt environments */,
 				2970AD711BFA153F007CFBD9 /* Sources */,
@@ -485,9 +458,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				29D1035D224B592A00B787BF /* PBXTargetDependency */,
 			);
 			name = SDOSEnvironmentExample;
+			packageProductDependencies = (
+				29514F3722E7135300216A42 /* SDOSEnvironment */,
+			);
 			productName = BaseProject;
 			productReference = 2970AD751BFA153F007CFBD9 /* SDOSEnvironmentExample.app */;
 			productType = "com.apple.product-type.application";
@@ -531,6 +506,9 @@
 				es,
 			);
 			mainGroup = 2970AD6C1BFA153F007CFBD9;
+			packageReferences = (
+				29514F3622E7135300216A42 /* XCRemoteSwiftPackageReference "SDOSEnvironment" */,
+			);
 			productRefGroup = 2970AD761BFA153F007CFBD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -579,7 +557,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironment\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -output-bin \"${SRCROOT}/App/Configuration/Properties/Environments.bin\" -output-file \"${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/Environments.plist\" -validate-environment ${SDOSEnvironment}\n";
+			shellScript = "#\"${PODS_ROOT}/../../../src/Scripts/SDOSEnvironment\" -b ${PRODUCT_BUNDLE_IDENTIFIER} -output-bin \"${SRCROOT}/App/Configuration/Properties/Environments.bin\" -output-file \"${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift\" -i \"${PROJECT_DIR}/App/Configuration/Properties/Environments.plist\" -validate-environment ${SDOSEnvironment}\n";
 		};
 		2940E4372231185B0057986A /* Xcode Version */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -613,28 +591,6 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/App\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
-		494E506AC9214046915A9206 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SDOSEnvironmentExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -665,14 +621,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		29D1035D224B592A00B787BF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 294F78982226942700E2A24F /* SDOSEnvironmentScript */;
-			targetProxy = 29D1035C224B592A00B787BF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		298FD6341C0701E500BA707E /* Localizable.strings */ = {
@@ -711,7 +659,13 @@
 				CONFIGURATION_BUILD_DIR = "${PROJECT_DIR}/../../src/Scripts";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+					"@executable_path",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -771,14 +725,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+					"@executable_path",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = SDOSEnvironment;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "SDOSEnvironmentScript/SDOSEnvironmentScript-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Preproduction;
@@ -830,14 +791,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+					"@executable_path",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = SDOSEnvironment;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "SDOSEnvironmentScript/SDOSEnvironmentScript-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Production;
@@ -939,7 +907,6 @@
 		};
 		2970AD901BFA153F007CFBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4EA5AA6C9C455C5C8D51B7F /* Pods-SDOSEnvironmentExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -950,7 +917,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSEnvironmentExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSEnvironmentExample;
 				PROVISIONING_PROFILE = "e3c79fee-fab0-4405-be2d-67ad06785abb";
@@ -963,7 +933,6 @@
 		};
 		2970AD911BFA153F007CFBD9 /* Preproduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95B50083E866AFEB47199686 /* Pods-SDOSEnvironmentExample.preproduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -974,7 +943,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSEnvironmentExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSEnvironmentExample;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1032,7 +1004,6 @@
 		};
 		29AFB1E71C04A0F8004AB1B6 /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 264674AD2E9336432AACE6AC /* Pods-SDOSEnvironmentExample.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -1043,7 +1014,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSEnvironmentExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSEnvironmentExample;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1086,6 +1060,25 @@
 			defaultConfigurationName = Preproduction;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29514F3622E7135300216A42 /* XCRemoteSwiftPackageReference "SDOSEnvironment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@svrgitpub.sdos.es:iOS/SDOSEnvironment.git";
+			requirement = {
+				branch = feature/spm;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29514F3722E7135300216A42 /* SDOSEnvironment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29514F3622E7135300216A42 /* XCRemoteSwiftPackageReference "SDOSEnvironment" */;
+			productName = SDOSEnvironment;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2970AD6D1BFA153F007CFBD9 /* Project object */;
 }

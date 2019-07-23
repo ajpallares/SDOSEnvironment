@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RNCryptor",
+        "repositoryURL": "https://github.com/RNCryptor/RNCryptor.git",
+        "state": {
+          "branch": null,
+          "revision": "5e3bbf44f08bf90049537cb8902d8f4fa911a79a",
+          "version": "5.1.0"
+        }
+      },
+      {
+        "package": "SDOSEnvironment",
+        "repositoryURL": "git@svrgitpub.sdos.es:iOS/SDOSEnvironment.git",
+        "state": {
+          "branch": "feature/spm",
+          "revision": "5b6c78370af93816d426e2201c16770596514630",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
