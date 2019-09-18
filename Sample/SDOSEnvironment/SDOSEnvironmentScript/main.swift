@@ -24,6 +24,7 @@ class ScriptAction {
     var output: String!
     var outputFile: String!
     var password: String!
+    var accessLevel: String?
     var validateEnvironment: String?
     var disableInputOutputFilesValidation = false
     var unlockFiles = false
@@ -120,6 +121,13 @@ class ScriptAction {
         }
         parameters.append(parameter8)
         
+        let parameter9 = ConsoleParameter(numArgs: 1, option: "-access-level") { values in
+            let result = values[1]
+            self.accessLevel = result
+            return true
+        }
+        parameters.append(parameter9)
+        
     }
     
     func generatePassword(bundle: String) -> String {
@@ -165,6 +173,7 @@ class ScriptAction {
         print("-validate-environment String correspondiente al entorno que se quiere validar. La validación comprobará que todas las claves indicadas en el fichero tengan un valor para el entorno definido")
         print("--disable-input-output-files-validation Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a Legacy Build System")
         print("--unlock-files Indica que los ficheros de salida no se deben bloquear en el sistema")
+        print("-access-level Indica que el modificador de acceso al sistema")
         exit(1)
     }
     
@@ -225,6 +234,12 @@ class ScriptAction {
     
     func generateImplementation(keys: [String]?) -> String {
         var result = ""
+        var accessLevelFinal: String
+        if let accessLevel = accessLevel {
+            accessLevelFinal = "\(accessLevel) "
+        } else {
+            accessLevelFinal = ""
+        }
         if let keys = keys {
             var fileRelativePath = input!
             fileRelativePath = fileRelativePath.replacingOccurrences(of: self.pwd, with: "")
@@ -232,12 +247,12 @@ class ScriptAction {
             result.append(contentsOf: "")
             result.append(contentsOf: "/// This Environment is generated and contains static references to \(keys.count) variables\n")
             result.append(contentsOf: "/// Reference file: \(fileRelativePath.replacingOccurrences(of: pwd, with: ""))\n")
-            result.append(contentsOf: "struct Environment {\n")
+            result.append(contentsOf: "\(accessLevelFinal)struct Environment {\n")
             result.append(contentsOf: "\tprivate init() { }\n")
             
             for item in keys {
                 result.append(contentsOf: "\t/// Variable reference: \(item)\n")
-                result.append(contentsOf: "\tstatic var \(item.lowerCaseFirstLetter()): String { return SDOSEnvironment.getValue(key: \"\(item)\") }\n")
+                result.append(contentsOf: "\t\(accessLevelFinal)static var \(item.lowerCaseFirstLetter()): String { return SDOSEnvironment.getValue(key: \"\(item)\") }\n")
             }
         }
         result.append(contentsOf: "}")

@@ -1,12 +1,12 @@
 - [SDOSEnvironment](#sdosenvironment)
-  - [Introducción](#introducci%C3%B3n)
-  - [Instalación](#instalaci%C3%B3n)
+  - [Introducción](#introducci%c3%b3n)
+  - [Instalación](#instalaci%c3%b3n)
     - [Cocoapods](#cocoapods)
-  - [Cómo se usa](#c%C3%B3mo-se-usa)
-    - [Script de encriptación y generación de código](#script-de-encriptaci%C3%B3n-y-generaci%C3%B3n-de-c%C3%B3digo)
-      - [Qué hace el script](#qu%C3%A9-hace-el-script)
+  - [Cómo se usa](#c%c3%b3mo-se-usa)
+    - [Script de encriptación y generación de código](#script-de-encriptaci%c3%b3n-y-generaci%c3%b3n-de-c%c3%b3digo)
+      - [Qué hace el script](#qu%c3%a9-hace-el-script)
       - [Anotaciones](#anotaciones)
-    - [Implementación](#implementaci%C3%B3n)
+    - [Implementación](#implementaci%c3%b3n)
   - [Dependencias](#dependencias)
   - [Referencias](#referencias)
 
@@ -26,7 +26,7 @@ Además, la librería aporta un punto extra de seguridad encriptando el fichero 
 Usaremos [CocoaPods](https://cocoapods.org). Hay que añadir la dependencia al `Podfile`:
 
 ```ruby
-pod 'SDOSEnvironment', '~>1.0.3' 
+pod 'SDOSEnvironment', '~>1.0.4' 
 ```
 
 ## Cómo se usa
@@ -86,6 +86,7 @@ El script tiene los siguientes parámetros que pueden incluirse en base a las ne
 |`-p [valor]`|[x]*|Contraseña usada para encriptar el fichero. Éste paraámetro no tendrá en cuenta si se ha indicado el parámetro `-b`|`Aa123456`|
 |`--disable-input-output-files-validation`||Deshabilita la validación de los inputs y outputs files. Usar sólo para dar compatibilidad a `Legacy Build System`|
 |`--unlock-files`||Indica que los ficheros de salida no se deben bloquear en el sistema|
+|`-access-level`||Indica que el modificador de acceso al sistema| `public`|
 ***Uno de los dos valores debe estar en la ejecución del script**
 
 > Puedes consultar la ayuda completa ejecutando `./SDOSEnvironment help` en el terminal
