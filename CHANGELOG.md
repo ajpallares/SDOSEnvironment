@@ -1,3 +1,7 @@
+## [1.0.4 Add access level property](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v1.0.4)
+
+- Añadido parámetro para modificar el valor de acceso de la clase y las variables
+
 ## [1.0.3 Cambiado bloqueo de ficheros](https://svrgitpub.sdos.es/iOS/SDOSEnvironment/tree/v1.0.3)
 
 - Modificada la forma de bloquear los ficheros. Ahora les quita el permiso de escritura
