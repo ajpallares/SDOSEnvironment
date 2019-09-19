@@ -5,9 +5,9 @@ Pod::Spec.new do |spec|
   spec.authors      = 'SDOS'
   spec.version      = @version
   spec.license      = { :type => 'MIT' }
-  spec.homepage     = 'https://svrgitpub.sdos.es/iOS/SDOSEnvironment'
+  spec.homepage     = 'https://github.com/SDOSLabs/SDOSEnvironment'
   spec.summary      = 'Librería para el manejo de variables de entorno'
-  spec.source       = { :git => "https://svrgitpub.sdos.es/iOS/SDOSEnvironment.git", :tag => "v#{spec.version}" }
+  spec.source       = { :git => "https://github.com/SDOSLabs/SDOSEnvironment.git", :tag => "v#{spec.version}" }
   spec.framework    = ['Foundation']
   spec.requires_arc = true
   spec.swift_version = '5.0'

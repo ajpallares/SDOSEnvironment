@@ -13,7 +13,7 @@
 # SDOSEnvironment
 
 - Enlace confluence: https://kc.sdos.es/x/PwLLAQ
-- Changelog: https://svrgitpub.sdos.es/iOS/SDOSEnvironment/blob/master/CHANGELOG.md
+- Changelog: https://github.com/SDOSLabs/SDOSEnvironment/blob/master/CHANGELOG.md
 
 ## Introducción
 SDOSEnvironment es una librería que permite configurar constantes que tengan valores diferentes para cada **entorno de ejecución** (*Debug, Preproduction, Production, etc*). Esto es muy útil para casos como **url de ws**, **claves de analíticas**, etc, donde en cada entorno de ejecución pueden ser diferentes. Con está librería cada entorno dispondrá de los valores correctos, sin necesidad de modificarlos dependiendo del que queramos ejecutar.
@@ -121,4 +121,4 @@ Para usar la librería sólo es necesario lanzar la configuración inicial de la
 * [RNCryptor](https://github.com/RNCryptor/RNCryptor) - 5.x
 
 ## Referencias
-* https://svrgitpub.sdos.es/iOS/SDOSEnvironment
+* https://github.com/SDOSLabs/SDOSEnvironment
