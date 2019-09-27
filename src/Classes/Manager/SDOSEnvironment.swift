@@ -77,9 +77,9 @@ La estructura del .plist deberá ser la siguiente:
     
     private override init() { }
     
-    static private func environmentKeyConfigFile() -> String {
+    static private func environmentKeyConfigFile(bundle: Bundle) -> String {
         var result = defaultEnvironmentKey
-        if let key = Bundle.main.object(forInfoDictionaryKey: EnvionmentKeyInfoPlist) as? String {
+        if let key = bundle.object(forInfoDictionaryKey: EnvionmentKeyInfoPlist) as? String {
             result = key
         }
         return result
@@ -92,15 +92,15 @@ La estructura del .plist deberá ser la siguiente:
     ///   - password: Contraseña para desencriptar las variables de entorno. Default: Contraseña generada a partir del paquete de la aplicación
     ///   - environmentKey: Nombre del entorno del que se deberán recuperar los valores de las variables. Default: Production
     ///   - activeLogging: Indica si se debe activar el log del uso de la librería. No se imprimirán logs si el environmentKey es "Production". Default: false
-    @objc public static func configure(file: String = "Environments.bin", password: String? = nil, environmentKey: String? = nil, activeLogging: Bool = false) {
+    @objc public static func configure(bundle: Bundle = Bundle.main, file: String = "Environments.bin", password: String? = nil, environmentKey: String? = nil, activeLogging: Bool = false) {
         var key: String
         if let environmentKey = environmentKey {
             key = environmentKey
         } else {
-            key = environmentKeyConfigFile()
+            key = environmentKeyConfigFile(bundle: bundle)
         }
         sharedInstance.activeLogging(activeLogging: activeLogging)
-        sharedInstance.configure(file: file, password: password, environmentKey: key)
+        sharedInstance.configure(bundle: bundle, file: file, password: password, environmentKey: key)
     }
     
     /// Cambia el actual entorno del que se deben recuperar las variables de entorno
@@ -125,7 +125,7 @@ La estructura del .plist deberá ser la siguiente:
         sharedInstance.activeLogging(activeLogging: activeLogging)
     }
     
-    private func configure(file: String, password pwd: String?, environmentKey: String) {
+    private func configure(bundle: Bundle, file: String, password pwd: String?, environmentKey: String) {
         var password: String
         if let key = pwd {
             password = key
@@ -133,7 +133,7 @@ La estructura del .plist deberá ser la siguiente:
             password = generateDefaultPassword()
         }
         //decrypt the saved environments.bin to get environments.json contents
-        let environmentsFilePath = Bundle.main.path(forResource: file, ofType: "")
+        let environmentsFilePath = bundle.path(forResource: file, ofType: "")
         if let path = environmentsFilePath {
             do {
                 let url = URL(fileURLWithPath: path)
@@ -213,8 +213,8 @@ La estructura del .plist deberá ser la siguiente:
         return finalValue
     }
     
-    private func generateDefaultPassword() -> String {
-        let bundle = Bundle.main.bundleIdentifier
+    private func generateDefaultPassword(bundle: Bundle = Bundle.main) -> String {
+        let bundle = bundle.bundleIdentifier
         var password = ""
         var bytes = [UInt8]()
         if let bundle = bundle {
