@@ -88,6 +88,7 @@ La estructura del .plist deberá ser la siguiente:
     /// Configura los parámetros usados para poder usar las variables de entorno
     ///
     /// - Parameters:
+    ///   - bundle: Bundle desde donde se deben cargar los recursos
     ///   - file: Fichero encriptado para extraer las variables de entorno. Default: Environments.bin
     ///   - password: Contraseña para desencriptar las variables de entorno. Default: Contraseña generada a partir del paquete de la aplicación
     ///   - environmentKey: Nombre del entorno del que se deberán recuperar los valores de las variables. Default: Production
