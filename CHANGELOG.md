@@ -1,3 +1,6 @@
+## [HEAD] 
+- Añadido un nuevo parámetro opcional para poder seleccionar el Bundle de donde se deben coger los recursos. Por defecto será el main
+
 ## [1.0.4 Add access level property](https://github.com/SDOSLabs/SDOSEnvironment/tree/v1.0.4)
 
 - Añadido parámetro para modificar el valor de acceso de la clase y las variables
