@@ -27,6 +27,8 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -36,8 +38,8 @@
             ReferencedContainer = "container:SDOSEnvironmentExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <Testables>
-      </Testables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -61,11 +63,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-o ${PROJECT_DIR}/App/Configuration/Properties/Environments.bin"
+            argument = "-output-bin ${PROJECT_DIR}/Pods/../App/Configuration/Properties/Environments.bin"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-of ${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift"
+            argument = "-output-file ${PROJECT_DIR}/App/Others/Autogenerate/EnvironmentGenerated.swift"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -116,6 +118,8 @@
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Preproduction"

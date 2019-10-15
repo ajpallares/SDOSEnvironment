@@ -1,3 +1,7 @@
+## [HEAD]
+
+- Se ha arreglado un error por el que la validación de los inputs y output files no funcionaban correctamente si la ruta contenia "../"
+
 ## [1.1.0 Custom bundle](https://github.com/SDOSLabs/SDOSEnvironment/tree/v1.1.0)
 
 - Añadido un nuevo parámetro opcional para poder seleccionar el Bundle de donde se deben coger los recursos. Por defecto será el main

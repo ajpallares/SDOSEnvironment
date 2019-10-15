@@ -400,7 +400,7 @@ extension ScriptAction {
             if let num = Int(numString) {
                 for i in 0...num {
                     if let param = ProcessInfo.processInfo.environment["SCRIPT_\(type.rawValue)_FILE_\(i)"] {
-                        params.append(param)
+                        params.append(resolvePath(path: param))
                     }
                 }
             }
@@ -418,11 +418,31 @@ extension ScriptAction {
     
     func checkInputOutput(params: [String], sources: [String], message: String) {
         for source in sources {
-            if !params.contains(source) {
+            let realSource = resolvePath(path: source)
+            if !params.contains(realSource) {
                 print("[SDOSEnvironment] - \(message) '\(source.replacingOccurrences(of: pwd, with: "${SRCROOT}"))'.")
                 exit(7)
             }
         }
+    }
+    
+    func resolvePath(path: String) -> String {
+        var arrayComponents: [String] = path.components(separatedBy: "/").reversed()
+        var numComponentsToDelete = 0
+        arrayComponents = arrayComponents.compactMap { item -> String? in
+            if item == ".." {
+                numComponentsToDelete += 1
+                return nil
+            } else {
+                if numComponentsToDelete != 0 {
+                    numComponentsToDelete -= 1
+                    return nil
+                } else {
+                    return item
+                }
+            }
+        }
+        return arrayComponents.reversed().joined(separator: "/")
     }
 }
 
