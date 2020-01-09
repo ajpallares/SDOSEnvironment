@@ -226,7 +226,7 @@ La estructura del .plist deberá ser la siguiente:
                 bytes.append(char)
             }
         }
-        if let string = String(bytes: bytes, encoding: .utf8) {
+        if let string = String(bytes: bytes, encoding: .ascii) {
             password = string
         }
         
